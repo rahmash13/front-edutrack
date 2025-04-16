@@ -1,0 +1,11 @@
+{
+    "data": [
+        {
+            "id":1,
+            "name": "Wissem Chihaoui",
+            "mail": "chriharahma7@gmail.com",
+            "phone": "22222222",
+            "eleve": ["majd chihaoui", "lin chihaoui","majdoulin chihaoui" ]
+        }
+    ]
+}
