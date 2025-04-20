@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 
-
 <html
   lang="en"
-  class="layout-navbar-fixed layout-compact dark-style layout-menu-fixed"
+  class="layout-navbar-fixed layout-compact  layout-menu-fixed"
   dir="ltr"
   data-theme="theme-default"
   data-assets-path="/assets/"
@@ -40,12 +39,7 @@
     <!-- Vendors CSS -->
     <link rel="stylesheet" href="/assets/vendor/libs/node-waves/node-waves.css" />
     <link rel="stylesheet" href="/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
-    <link rel="stylesheet" href="/assets/vendor/libs/typeahead-js/typeahead.css" />
-    <link rel="stylesheet" href="/assets/vendor/libs/datatables-bs5/datatables.bootstrap5.css" />
-    <link rel="stylesheet" href="/assets/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.css" />
-    <link rel="stylesheet" href="/assets/vendor/libs/datatables-buttons-bs5/buttons.bootstrap5.css" />
-    <link rel="stylesheet" href="/assets/vendor/libs/select2/select2.css" />
-    <link rel="stylesheet" href="/assets/vendor/libs/@form-validation/umd/styles/index.min.css" />
+
     <!-- Page CSS -->
 
     <!-- Helpers -->
@@ -105,8 +99,8 @@
 
           <ul class="menu-inner py-1">
             <!-- Page -->
-            <li class="menu-item ">
-              <a href="javascript:void(0)" class="menu-link">
+            <li class="menu-item">
+              <a href="javascript:void(0)" class="menu-link ">
                 <i class="menu-icon tf-icons ti ti-smart-home"></i>
                 <div data-i18n="dashboard">Tableau de bord</div>
               </a>
@@ -116,7 +110,7 @@
                 <i class="menu-icon tf-icons ti ti-smart-home"></i>
                 <div data-i18n="eleve">Les élèves</div>
               </a>
-              <ul class="menu-sub ">
+              <ul class="menu-sub">
                 <li class="menu-item">
                   <a href="/admin/students/index.html" class="menu-link">
                     <div data-i18n="List">Liste</div>
@@ -125,13 +119,13 @@
                 
               </ul>
             </li>
-            <li class="menu-item open active">
+            <li class="menu-item">
               <a href="javascript:void(0)" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons ti ti-user"></i>
                 <div data-i18n="parent">Les parents</div>
               </a>
               <ul class="menu-sub">
-                <li class="menu-item active">
+                <li class="menu-item">
                   <a href="/admin/parent/index.html" class="menu-link">
                     <div data-i18n="List">Liste</div>
                   </a>
@@ -139,13 +133,13 @@
                 
               </ul>
             </li>
-            <li class="menu-item">
+            <li class="menu-item active open">
               <a href="javascript:void(0)" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons ti ti-school"></i>
                 <div data-i18n="classe">Les classes</div>
               </a>
               <ul class="menu-sub">
-                <li class="menu-item">
+                <li class="menu-item active">
                   <a href="/admin/classes/index.html" class="menu-link">
                     <div data-i18n="List">Liste</div>
                   </a>
@@ -294,91 +288,72 @@
             <!-- Content -->
 
             <div class="container-xxl flex-grow-1 container-p-y">
-                <div class="card">
-                    <div class="card-header border-bottom">
-                      <h5 class="card-title mb-3">recherche</h5>
-                      <div class="d-flex justify-content-between align-items-center row pb-2 gap-3 gap-md-0">
-                        <div class="col-md-4 user_role"></div>
-                      </div>
+                <div class="d-flex justify-content-between mb-4">
+                    <input type="text" class="form-control w-auto" placeholder="Rechercher..."/>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-class">Ajouter</button>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 mb-4">
+                        <a href="/admin/students/index.html?class=1a" class="card">
+                            <h4 class="card-header">
+                                1ér année <span class="fw-bold">A</span>
+                            </h4>
+                            <div class="card-body">
+                                
+                                <div><i class="ti ti-school"> </i> 18 élèves</div>
+                            </div>
+                        </a>
                     </div>
-                    <div class="card-datatable table-responsive">
-                      <table class="datatables-users table">
-                        <thead class="border-top">
-                          <tr>
-                            <th></th>
-                            <th>Parent</th>
-                            <th>Email</th>
-                            <th>Téléphone</th>
-                            <th>Eleves</th>
-                            <th></th>
-                          </tr>
-                        </thead>
-                      </table>
+                    <div class="col-md-3 mb-4">
+                        <a href="/admin/students/index.html?class=1b" class="card">
+                            <h4 class="card-header">
+                                1ér année <span class="fw-bold">B</span>
+                            </h4>
+                            <div class="card-body">
+                                
+                                <div><i class="ti ti-school"> </i> 14 élèves</div>
+                            </div>
+                        </a>
                     </div>
-                    <!-- Offcanvas to add new user -->
-                    <div
-                      class="offcanvas offcanvas-end"
-                      tabindex="-1"
-                      id="offcanvasAddUser"
-                      aria-labelledby="offcanvasAddUserLabel">
-                      <div class="offcanvas-header">
-                        <h5 id="offcanvasAddUserLabel" class="offcanvas-title">Ajouter Parent</h5>
-                        <button
-                          type="button"
-                          class="btn-close text-reset"
-                          data-bs-dismiss="offcanvas"
-                          aria-label="Close"></button>
-                      </div>
-                      <div class="offcanvas-body mx-0 flex-grow-0 pt-0 h-100">
-                        <form class="add-new-user pt-0" id="addNewUserForm" onsubmit="return false">
-                          <div class="mb-3">
-                            <label class="form-label" for="add-parent-fullname">Nom & Prénom</label>
-                            <input
-                              type="text"
-                              class="form-control"
-                              id="add-parent-fullname"
-                              placeholder="rahma"
-                              name="userFullname"
-                              aria-label="rahma" />
-                          </div>
-                          <div class="mb-3">
-                            <label class="form-label" for="add-parent-email">Email</label>
-                            <input
-                              type="text"
-                              id="add-parent-email"
-                              class="form-control"
-                              placeholder="chriharahma@example.com"
-                              aria-label="chriharahma@example.com"
-                              name="userEmail" />
-                          </div>
-                
-                          <div class="mb-3">
-                            <label for="add-parent-phone" class="form-label">Téléphone</label>
-                          
-                              <input class="form-control" type="tel" value="90-(164)-188-556" id="add-parent-phone" />
-                            
-                          </div>
-                     
-                        
-                          <div class="mb-3">
-                            <label class="form-label" for="élève">élève</label>
-                            <select id="eleve" class="select2 form-select">
-                              <option value="">Select</option>
-                              <option value="arbi chriha">arbi chriha</option>
-                              <option value="arbi chriha">wissem chihaoui</option>
-                            
-                            </select>
-                          </div>
-                         
-                          <button type="submit" class="btn btn-primary me-sm-3 me-1 data-submit">Submit</button>
-                          <button type="reset" class="btn btn-label-secondary" data-bs-dismiss="offcanvas">Cancel</button>
-                        </form>
-                      </div>
+                    <div class="col-md-3 mb-4">
+                        <a href="/admin/students/index.html?class=1c" class="card">
+                            <h4 class="card-header">
+                                1ér année <span class="fw-bold">C</span>
+                            </h4>
+                            <div class="card-body">
+                                
+                                <div><i class="ti ti-school"> </i> 16 élèves</div>
+                            </div>
+                        </a>
                     </div>
-                  </div>
+                </div>
             </div>
             <!-- / Content -->
-
+            <div class="modal fade" id="add-class" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered1 modal-simple modal-add-new-cc">
+                  <div class="modal-content p-3 p-md-5">
+                    <div class="modal-body">
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      <div class="text-center mb-4">
+                        <h3 class="mb-2">Ajouter classe</h3>
+                      </div>
+                      <form id="addNewCCForm" class="row g-3 fv-plugins-bootstrap5 fv-plugins-framework" onsubmit="return false" novalidate="novalidate">
+                        <div class="col-12 fv-plugins-icon-container">
+                          <label class="form-label w-100" for="modalAddCard">Class</label>
+                          <div class="input-group input-group-merge has-validation">
+                            <input id="modalAddCard" name="modalAddCard" class="form-control credit-card-mask" type="text" placeholder="" aria-describedby="modalAddCard2">
+                            <span class="input-group-text cursor-pointer p-1" id="modalAddCard2"><span class="card-type"></span></span>
+                          </div><div class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback"></div>
+                        </div>
+                     
+                        <div class="col-12 text-center">
+                          <button type="submit" class="btn btn-primary me-sm-3 me-1 waves-effect waves-light">Enregistrer</button>
+                        </div>
+                      <input type="hidden"></form>
+                    </div>
+                  </div>
+                </div>
+              </div>
             <div class="content-backdrop fade"></div>
           </div>
           <!-- Content wrapper -->
@@ -409,18 +384,10 @@
     <!-- endbuild -->
 
     <!-- Vendors JS -->
-    <script src="/assets/vendor/libs/moment/moment.js"></script>
-    <script src="/assets/vendor/libs/datatables-bs5/datatables-bootstrap5.js"></script>
-    <script src="/assets/vendor/libs/select2/select2.js"></script>
-    <script src="/assets/vendor/libs/@form-validation/umd/bundle/popular.min.js"></script>
-    <script src="/assets/vendor/libs/@form-validation/umd/plugin-bootstrap5/index.min.js"></script>
-    <script src="/assets/vendor/libs/@form-validation/umd/plugin-auto-focus/index.min.js"></script>
-    <script src="/assets/vendor/libs/cleavejs/cleave.js"></script>
-    <script src="/assets/vendor/libs/cleavejs/cleave-phone.js"></script>
+
     <!-- Main JS -->
     <script src="/assets/js/main.js"></script>
 
     <!-- Page JS -->
-    <script src="/assets/js/parent-list.js"></script>
   </body>
 </html>
