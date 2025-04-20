@@ -91,21 +91,50 @@ $(function () {
   function loadNotesForm(studentName) {
     const $notesSection = $('#notes-section').empty();
     $notesSection.append(`<div class="list-group-item active">${studentName} - Notes</div>`);
-
-    $.each(subjects, function(_, subject) {
+  
+    subjects.forEach(subject => {
       const $row = $(`
-        <div class="list-group-item">
+        <div class="list-group-item note-row">
           <div class="row align-items-center">
             <div class="col-6 font-medium">${subject}</div>
             <div class="col-6">
-              <input type="text" class="form-control form-control-sm" placeholder="Note">
+              <input type="number" step="0.01" min="0" max="20" class="form-control form-control-sm note-input" placeholder="Note">
             </div>
           </div>
         </div>
       `);
       $notesSection.append($row);
     });
+  
+    // Moyenne display row
+    const $moyenneRow = $(`
+      <div class="list-group-item bg-light font-semibold">
+        <div class="row align-items-center">
+          <div class="col-6">Moyenne</div>
+          <div class="col-6" id="moyenne-value">--</div>
+        </div>
+      </div>
+    `);
+    $notesSection.append($moyenneRow);
+  
+    // Event: recalculate moyenne when any note changes
+    $('.note-input').on('input', function () {
+      let total = 0;
+      let count = 0;
+  
+      $('.note-input').each(function () {
+        const val = parseFloat($(this).val());
+        if (!isNaN(val) && val >= 0 && val <= 20) {
+          total += val;
+          count++;
+        }
+      });
+  
+      const moyenne = count > 0 ? (total / count).toFixed(2) : '--';
+      $('#moyenne-value').text(moyenne);
+    });
   }
+  
 
   // Event listeners
   $(document).ready(function() {
