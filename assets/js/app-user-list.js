@@ -392,7 +392,7 @@ $(function () {
           .every(function () {
             var column = this;
             var select = $(
-              '<select id="UserRole" class="form-select text-capitalize"><option value=""> Select Role </option></select>'
+              '<select id="UserRole" class="form-select text-capitalize"><option value=""> Toutes les classes </option></select>'
             )
               .appendTo('.user_role')
               .on('change', function () {
