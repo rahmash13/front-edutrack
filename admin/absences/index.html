@@ -80,7 +80,7 @@
                                     fill="#7367F0" />
                             </svg>
                         </span>
-                        <span class="app-brand-text demo menu-text fw-bold">Vuexy</span>
+                        <span class="app-brand-text demo menu-text fw-bold">Edutrack</span>
                     </a>
 
                     <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto">
@@ -152,11 +152,7 @@
                                     <div data-i18n="List">Liste</div>
                                 </a>
                             </li>
-                            <li class="menu-item">
-                                <a href="/admin/bulletins/add.html" class="menu-link">
-                                    <div data-i18n="List">Ajouter</div>
-                                </a>
-                            </li>
+                       
                         </ul>
                     </li>
                     <li class="menu-item open active">
@@ -170,11 +166,7 @@
                                     <div data-i18n="List">Marque la présence</div>
                                 </a>
                             </li>
-                            <li class="menu-item">
-                                <a href="/admin/absences/add.html" class="menu-link">
-                                    <div data-i18n="List">Ajouter</div>
-                                </a>
-                            </li>
+                            
 
                         </ul>
                     </li>
@@ -307,61 +299,12 @@
                                             <th>Classe</th>
                                             <th>Absent</th>
                                             <th>Date</th>
-                                            <th>Actions</th>
                                         </tr>
                                     </thead>
                                 </table>
                             </div>
                             <!-- Offcanvas to add new user -->
-                            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasAddUser"
-                                aria-labelledby="offcanvasAddUserLabel">
-                                <div class="offcanvas-header">
-                                    <h5 id="offcanvasAddUserLabel" class="offcanvas-title">Ajouter élève</h5>
-                                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-                                        aria-label="Close"></button>
-                                </div>
-                                <div class="offcanvas-body mx-0 flex-grow-0 pt-0 h-100">
-                                    <form class="add-new-user pt-0" id="addNewUserForm" onsubmit="return false">
-                                        <div class="mb-3">
-                                            <label class="form-label" for="add-user-fullname">Nom & Prénom</label>
-                                            <input type="text" class="form-control" id="add-user-fullname"
-                                                placeholder="rahma" name="userFullname" aria-label="rahma" />
-                                        </div>
-                                        <div class="mb-3">
-                                            <label class="form-label" for="add-user-email">Email</label>
-                                            <input type="text" id="add-user-email" class="form-control"
-                                                placeholder="chriharahma@example.com"
-                                                aria-label="chriharahma@example.com" name="userEmail" />
-                                        </div>
-
-
-                                        <div class="mb-3">
-                                            <label class="form-label" for="classe">Classe</label>
-                                            <select id="classe" class="select2 form-select">
-                                                <option value="">Select</option>
-                                                <option value="primaire A">primaire A</option>
-                                                <option value="primaire B">primaire B</option>
-                                                <option value="primaire C">primaire C</option>
-
-                                            </select>
-                                        </div>
-                                        <div class="mb-3">
-                                            <label class="form-label" for="parent">Parent</label>
-                                            <select id="parent" class="select2 form-select">
-                                                <option value="">Select</option>
-                                                <option value="arbi chriha">arbi chriha</option>
-                                                <option value="arbi chriha">wissem chihaoui</option>
-
-                                            </select>
-                                        </div>
-
-                                        <button type="submit"
-                                            class="btn btn-primary me-sm-3 me-1 data-submit">Submit</button>
-                                        <button type="reset" class="btn btn-label-secondary"
-                                            data-bs-dismiss="offcanvas">Cancel</button>
-                                    </form>
-                                </div>
-                            </div>
+                            
                         </div>
                     </div>
                     <!-- / Content -->

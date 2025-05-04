@@ -13,7 +13,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title>Page 1 - Starter Kit | Vuexy - Bootstrap Admin Template</title>
+    <title>Parent Dashboard</title>
 
     <meta name="description" content="" />
 
@@ -86,7 +86,7 @@
                     fill="#7367F0" />
                 </svg>
               </span>
-              <span class="app-brand-text demo menu-text fw-bold">Vuexy</span>
+              <span class="app-brand-text demo menu-text fw-bold">Edutrack</span>
             </a>
 
             <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto">
@@ -99,87 +99,41 @@
 
           <ul class="menu-inner py-1">
             <!-- Page -->
+           
             <li class="menu-item">
-              <a href="javascript:void(0)" class="menu-link ">
+              <a href="/parent/Emploi/emploi.html" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons ti ti-smart-home"></i>
-                <div data-i18n="dashboard">Tableau de bord</div>
+                <div data-i18n="eleve">Emploi du Temps</div>
               </a>
             </li>
             <li class="menu-item">
-              <a href="javascript:void(0)" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons ti ti-smart-home"></i>
-                <div data-i18n="eleve">Les élèves</div>
-              </a>
-              <ul class="menu-sub">
-                <li class="menu-item">
-                  <a href="/admin/students/index.html" class="menu-link">
-                    <div data-i18n="List">Liste</div>
-                  </a>
-                </li>
-                
-              </ul>
-            </li>
-            <li class="menu-item">
-              <a href="javascript:void(0)" class="menu-link menu-toggle">
+              <a href="/parent/Notes/notes.html" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons ti ti-user"></i>
-                <div data-i18n="parent">Les parents</div>
+                <div data-i18n="parent">Les Notes</div>
               </a>
               <ul class="menu-sub">
                 <li class="menu-item">
-                  <a href="/admin/parent/index.html" class="menu-link">
-                    <div data-i18n="List">Liste</div>
+                  <a href="/parent/Notes/notes.html" class="menu-link">
+                    <div data-i18n="List">les notes</div>
                   </a>
-                </li>
-                
               </ul>
             </li>
-            <li class="menu-item active open">
-              <a href="javascript:void(0)" class="menu-link menu-toggle">
+            <li class="menu-item">
+              <a href="/parent/Absences/absences.html" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons ti ti-school"></i>
-                <div data-i18n="classe">Les classes</div>
+                <div data-i18n="classe">Les Absences</div>
               </a>
-              <ul class="menu-sub">
-                <li class="menu-item active">
-                  <a href="/admin/classes/index.html" class="menu-link">
-                    <div data-i18n="List">Liste</div>
-                  </a>
-                </li>
-                
-              </ul>
             </li>
               <li class="menu-item">
               <a href="javascript:void(0)" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons ti ti-file"></i>
-                <div data-i18n="bulletins">Les bulletins</div>
+                <div data-i18n="bulletins">Notifications</div>
               </a>
               <ul class="menu-sub">
                 <li class="menu-item">
-                  <a href="/admin/bulletins/index.html" class="menu-link">
-                    <div data-i18n="List">Liste</div>
+                  <a href="/parent/Notifications/notif.html" class="menu-link">
+                    <div data-i18n="List">boite message</div>
                   </a>
-                </li><li class="menu-item">
-                  <a href="/admin/bulletins/add.html" class="menu-link">
-                    <div data-i18n="List">Ajouter</div>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li class="menu-item">
-              <a href="javascript:void(0)" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons ti ti-school-off"></i>
-                <div data-i18n="absences">Les absences</div>
-              </a>
-              <ul class="menu-sub">
-                <li class="menu-item">
-                  <a href="/admin/absences/index.html" class="menu-link">
-                    <div data-i18n="List">Marque la présence</div>
-                  </a>
-                </li><li class="menu-item">
-                  <a href="/admin/absences/add.html" class="menu-link">
-                    <div data-i18n="List">Ajouter</div>
-                  </a>
-                </li>
-                
               </ul>
             </li>
           </ul>
@@ -253,7 +207,7 @@
                       <div class="dropdown-divider"></div>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="/admin/profile/index.html">
+                      <a class="dropdown-item" href="#">
                         <i class="ti ti-user-check me-2 ti-sm"></i>
                         <span class="align-middle">Mon profile</span>
                       </a>
@@ -284,76 +238,124 @@
           <!-- / Navbar -->
 
           <!-- Content wrapper -->
-          <div class="content-wrapper">
+          <!-- Content wrapper -->
+          <div class="container-xxl flex-grow-1 container-p-y">
+            <div class="content-wrapper">
+              <div class="card">
+                  <h5 class="card-header">les matières et les notes</h5>
+                  <div class="table-responsive text-nowrap">
+                    <table class="table">
+                      <thead class="table-dark">
+                        <tr>
+                          <th>Matiére</th>
+                          <th>Note 1</th>
+                          <th>Note 2</th>
+                          <th>Note 3</th>
+                          <th>Moyenne</th>
+                        </tr>
+                      </thead>
+                      <tbody class="table-border-bottom-0">
+                        <tr>
+                          <td>
+                            <i class="text-danger me-3"></i>
+                            <span class="fw-medium">Mathematique</span>
+                          </td>
+                          <td>15</td>
+                          <td>15</td>
+                          <td>15</td>
+                          <td>15</td>
+                      
+                          </ul>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <i class=" text-info me-3"></i>
+                            <span class="fw-medium">musique</span>
+                          </td>
+                          <td>15</td>
+                          <td>15</td>
+                          <td>15</td>
+                          <td>15</td>
+                            <div class="dropdown">
+                              <div class="dropdown-menu">
+                                <a class="dropdown-item" href="javascript:void(0);"
+                                  ><i class="ti ti-pencil me-1"></i> Edit</a
+                                >
+                                <a class="dropdown-item" href="javascript:void(0);"
+                                  ><i class="ti ti-trash me-1"></i> Delete</a
+                                >
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <i class=" text-info me-3"></i>
+                            <span class="fw-medium">anglais</span>
+                          </td>
+                          <td>15</td>
+                          <td>18</td>
+                          <td>14</td>
+                          <td>17</td>
+                            <div class="dropdown">
+                              <div class="dropdown-menu">
+                                <a class="dropdown-item" href="javascript:void(0);"
+                                  ><i class="ti ti-pencil me-1"></i> Edit</a
+                                >
+                                <a class="dropdown-item" href="javascript:void(0);"
+                                  ><i class="ti ti-trash me-1"></i> Delete</a
+                                >
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <tr>
+                              <td>
+                                <i class=" text-info me-3"></i>
+                                <span class="fw-medium">francais</span>
+                              </td>
+                              <td>15</td>
+                              <td>14</td>
+                              <td>11</td>
+                              <td>18</td>
+                                <div class="dropdown">
+                                  
+                                  <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="javascript:void(0);"
+                                      ><i class="ti ti-pencil me-1"></i> Edit</a
+                                    >
+                                    <a class="dropdown-item" href="javascript:void(0);"
+                                      ><i class="ti ti-trash me-1"></i> Delete</a
+                                    >
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                         
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+            </div>
+              <!-- Content -->
+  
+              <div class="container-xxl flex-grow-1 container-p-y">
+                
+              </div>
+              <!-- / Content -->
+  
+              <div class="content-backdrop fade"></div>
+            </div>
+            <!-- Content wrapper -->
             <!-- Content -->
 
             <div class="container-xxl flex-grow-1 container-p-y">
-                <div class="d-flex justify-content-between mb-4">
-                    <input type="text" class="form-control w-auto" placeholder="Rechercher..."/>
-                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-class">Ajouter</button>
-                </div>
-                <div class="row">
-                    <div class="col-md-3 mb-4">
-                        <a href="/admin/students/index.html?class=1a" class="card">
-                            <h4 class="card-header">
-                                1ér année <span class="fw-bold">A</span>
-                            </h4>
-                            <div class="card-body">
-                                
-                                <div><i class="ti ti-school"> </i> 18 élèves</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-3 mb-4">
-                        <a href="/admin/students/index.html?class=1b" class="card">
-                            <h4 class="card-header">
-                                1ér année <span class="fw-bold">B</span>
-                            </h4>
-                            <div class="card-body">
-                                
-                                <div><i class="ti ti-school"> </i> 14 élèves</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-3 mb-4">
-                        <a href="/admin/students/index.html?class=1c" class="card">
-                            <h4 class="card-header">
-                                1ér année <span class="fw-bold">C</span>
-                            </h4>
-                            <div class="card-body">
-                                
-                                <div><i class="ti ti-school"> </i> 16 élèves</div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
+              
             </div>
             <!-- / Content -->
-            <div class="modal fade" id="add-class" tabindex="-1" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered1 modal-simple modal-add-new-cc">
-                  <div class="modal-content p-3 p-md-5">
-                    <div class="modal-body">
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                      <div class="text-center mb-4">
-                        <h3 class="mb-2">Ajouter classe</h3>
-                      </div>
-                      <form id="addNewCCForm" class="row g-3 fv-plugins-bootstrap5 fv-plugins-framework" onsubmit="return false" novalidate="novalidate">
-                        <div class="col-12 fv-plugins-icon-container">
-                          <label class="form-label w-100" for="modalAddCard">Class</label>
-                          <div class="input-group input-group-merge has-validation">
-                            <input id="modalAddCard" name="modalAddCard" class="form-control credit-card-mask" type="text" placeholder="" aria-describedby="modalAddCard2">
-                            <span class="input-group-text cursor-pointer p-1" id="modalAddCard2"><span class="card-type"></span></span>
-                          </div><div class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback"></div>
-                        </div>
-                     
-                        <div class="col-12 text-center">
-                          <button type="submit" class="btn btn-primary me-sm-3 me-1 waves-effect waves-light">Enregistrer</button>
-                        </div>
-                      <input type="hidden"></form>
-                    </div>
-                  </div>
-                </div>
-              </div>
+
             <div class="content-backdrop fade"></div>
           </div>
           <!-- Content wrapper -->

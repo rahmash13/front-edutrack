@@ -86,7 +86,7 @@
                     fill="#7367F0" />
                 </svg>
               </span>
-              <span class="app-brand-text demo menu-text fw-bold">Vuexy</span>
+              <span class="app-brand-text demo menu-text fw-bold">Edutrack</span>
             </a>
 
             <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto">
@@ -99,7 +99,7 @@
 
           <ul class="menu-inner py-1">
             <!-- Page -->
-            <li class="menu-item">
+            <li class="menu-item active">
               <a href="javascript:void(0)" class="menu-link ">
                 <i class="menu-icon tf-icons ti ti-smart-home"></i>
                 <div data-i18n="dashboard">Tableau de bord</div>
@@ -133,13 +133,13 @@
                 
               </ul>
             </li>
-            <li class="menu-item active open">
+            <li class="menu-item">
               <a href="javascript:void(0)" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons ti ti-school"></i>
                 <div data-i18n="classe">Les classes</div>
               </a>
               <ul class="menu-sub">
-                <li class="menu-item active">
+                <li class="menu-item">
                   <a href="/admin/classes/index.html" class="menu-link">
                     <div data-i18n="List">Liste</div>
                   </a>
@@ -288,72 +288,119 @@
             <!-- Content -->
 
             <div class="container-xxl flex-grow-1 container-p-y">
-                <div class="d-flex justify-content-between mb-4">
-                    <input type="text" class="form-control w-auto" placeholder="Rechercher..."/>
-                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-class">Ajouter</button>
-                </div>
+                <h4 class="py-3 mb-4"><span class="text-muted fw-light">Mon profil</h4>
+
                 <div class="row">
-                    <div class="col-md-3 mb-4">
-                        <a href="/admin/students/index.html?class=1a" class="card">
-                            <h4 class="card-header">
-                                1ér année <span class="fw-bold">A</span>
-                            </h4>
-                            <div class="card-body">
-                                
-                                <div><i class="ti ti-school"> </i> 18 élèves</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-3 mb-4">
-                        <a href="/admin/students/index.html?class=1b" class="card">
-                            <h4 class="card-header">
-                                1ér année <span class="fw-bold">B</span>
-                            </h4>
-                            <div class="card-body">
-                                
-                                <div><i class="ti ti-school"> </i> 14 élèves</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-3 mb-4">
-                        <a href="/admin/students/index.html?class=1c" class="card">
-                            <h4 class="card-header">
-                                1ér année <span class="fw-bold">C</span>
-                            </h4>
-                            <div class="card-body">
-                                
-                                <div><i class="ti ti-school"> </i> 16 élèves</div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <!-- / Content -->
-            <div class="modal fade" id="add-class" tabindex="-1" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered1 modal-simple modal-add-new-cc">
-                  <div class="modal-content p-3 p-md-5">
-                    <div class="modal-body">
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                      <div class="text-center mb-4">
-                        <h3 class="mb-2">Ajouter classe</h3>
+                  <div class="col-md-12">
+                    <div class="card mb-4">
+                      <h5 class="card-header">Profil Détails</h5>
+                      <!-- Account -->
+                      <div class="card-body">
+                        <div class="d-flex align-items-start align-items-sm-center gap-4">
+                          <img
+                            src="../../assets/img/avatars/14.png"
+                            alt="user-avatar"
+                            class="d-block w-px-100 h-px-100 rounded"
+                            id="uploadedAvatar" />
+                          <div class="button-wrapper">
+                            <label for="upload" class="btn btn-primary me-2 mb-3" tabindex="0">
+                              <span class="d-none d-sm-block">ajouter image</span>
+                              <i class="ti ti-upload d-block d-sm-none"></i>
+                              <input
+                                type="file"
+                                id="upload"
+                                class="account-file-input"
+                                hidden
+                                accept="image/png, image/jpeg" />
+                            </label>
+                            <button type="button" class="btn btn-label-secondary account-image-reset mb-3">
+                              <i class="ti ti-refresh-dot d-block d-sm-none"></i>
+                              <span class="d-none d-sm-block">Reset</span>
+                            </button>
+  
+                            <div class="text-muted">JPG, GIF ou PNG autorisés. Taille maximale de 800K</div>
+                          </div>
+                        </div>
                       </div>
-                      <form id="addNewCCForm" class="row g-3 fv-plugins-bootstrap5 fv-plugins-framework" onsubmit="return false" novalidate="novalidate">
-                        <div class="col-12 fv-plugins-icon-container">
-                          <label class="form-label w-100" for="modalAddCard">Class</label>
-                          <div class="input-group input-group-merge has-validation">
-                            <input id="modalAddCard" name="modalAddCard" class="form-control credit-card-mask" type="text" placeholder="" aria-describedby="modalAddCard2">
-                            <span class="input-group-text cursor-pointer p-1" id="modalAddCard2"><span class="card-type"></span></span>
-                          </div><div class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback"></div>
+                      <hr class="my-0" />
+                      <div class="card-body">
+                        <form id="formAccountSettings" method="POST" onsubmit="return false">
+                          <div class="row">
+                            <div class="mb-3 col-md-6">
+                              <label for="firstName" class="form-label">Nom</label>
+                              <input
+                                class="form-control"
+                                type="text"
+                                id="firstName"
+                                name="firstName"
+                                value="John"
+                                autofocus />
+                            </div>
+                            <div class="mb-3 col-md-6">
+                              <label for="lastName" class="form-label">Prénom</label>
+                              <input class="form-control" type="text" name="lastName" id="lastName" value="Doe" />
+                            </div>
+                            <div class="mb-3 col-md-6">
+                              <label for="email" class="form-label">E-mail</label>
+                              <input
+                                class="form-control"
+                                type="text"
+                                id="email"
+                                name="email"
+                                value="john.doe@example.com"
+                                placeholder="john.doe@example.com" />
+                            </div>
+                           
+                            <div class="mb-3 col-md-6">
+                              <label class="form-label" for="phoneNumber">Numéro de Téléphone</label>
+                              <div class="input-group input-group-merge">
+                                <span class="input-group-text">TN (+216)</span>
+                                <input
+                                  type="text"
+                                  id="phoneNumber"
+                                  name="phoneNumber"
+                                  class="form-control"
+                                  placeholder="202 555 0111" />
+                              </div>
+                            </div>
+                        
+                          </div>
+                          <div class="mt-2">
+                            <button type="submit" class="btn btn-primary me-2">Save changes</button>
+                            <button type="reset" class="btn btn-label-secondary">Cancel</button>
+                          </div>
+                        </form>
+                      </div>
+                      <!-- /Account -->
+                    </div>
+                    <div class="card">
+                      <h5 class="card-header">Modifier mot de passe</h5>
+                      <div class="card-body">
+                        <div class="mb-3 col-12 mb-0">
+                          <div class="alert alert-warning">
+                            <h5 class="alert-heading mb-1">Êtes-vous sûr de vouloir modifier votre mot de passe ??</h5>
+                          </div>
                         </div>
-                     
-                        <div class="col-12 text-center">
-                          <button type="submit" class="btn btn-primary me-sm-3 me-1 waves-effect waves-light">Enregistrer</button>
-                        </div>
-                      <input type="hidden"></form>
+                        <form id="formAccountDeactivation" onsubmit="return false">
+                          <div class="form-check mb-4">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              name="accountActivation"
+                              id="accountActivation" />
+                            <label class="form-check-label" for="accountActivation"
+                              >I confirm my account deactivation</label
+                            >
+                          </div>
+                          <button type="submit" class="btn btn-danger deactivate-account">Deactivate Account</button>
+                        </form>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+            </div>
+            <!-- / Content -->
+
             <div class="content-backdrop fade"></div>
           </div>
           <!-- Content wrapper -->
