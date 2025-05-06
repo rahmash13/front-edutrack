@@ -53,12 +53,24 @@
     <link rel="stylesheet" href="../../assets/css/demo.css" />
 
     <!-- Vendors CSS -->
-    <link rel="stylesheet" href="../../assets/vendor/libs/node-waves/node-waves.css" />
-    <link rel="stylesheet" href="../../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
-    <link rel="stylesheet" href="../../assets/vendor/libs/typeahead-js/typeahead.css" />
+    <link
+      rel="stylesheet"
+      href="../../assets/vendor/libs/node-waves/node-waves.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../../assets/vendor/libs/typeahead-js/typeahead.css"
+    />
     <link rel="stylesheet" href="../../assets/vendor/libs/quill/katex.css" />
     <link rel="stylesheet" href="../../assets/vendor/libs/quill/editor.css" />
-    <link rel="stylesheet" href="../../assets/vendor/libs/select2/select2.css" />
+    <link
+      rel="stylesheet"
+      href="../../assets/vendor/libs/select2/select2.css"
+    />
 
     <!-- Page CSS -->
 
@@ -163,7 +175,7 @@
             <li class="menu-item active">
               <a href="/student/notification/notif.html" class="menu-link">
                 <i class="menu-icon tf-icons ti ti-file"></i>
-                <div data-i18n="bulletins">Notifications</div>
+                <div data-i18n="Demande de papier">Demande de papier</div>
               </a>
             </li>
           </ul>
@@ -317,825 +329,123 @@
             <!-- Content -->
 
             <div class="container-xxl flex-grow-1 container-p-y">
-              <div class="app-email card">
-                <div class="row g-0">
-                  <!-- Email Sidebar -->
-                  <div
-                    class="col app-email-sidebar border-end flex-grow-0"
-                    id="app-email-sidebar"
+              <div class="card">
+                <div
+                  class="d-flex justify-content-between align-items-center card-header"
+                >
+                  <h4>Mes Demandes de Papier</h4>
+                  <button
+                    class="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#addDemandeModal"
                   >
-                    <div class="btn-compost-wrapper d-grid">
-                      <button
-                        class="btn btn-primary btn-compose"
-                        data-bs-toggle="modal"
-                        data-bs-target="#emailComposeSidebar"
-                        id="emailComposeSidebarLabel"
-                      >
-                        Compose
-                      </button>
-                    </div>
-                    <!-- Email Filters -->
-                    <div class="email-filters py-2">
-                      <!-- Email Filters: Folder -->
-                      <ul class="email-filter-folders list-unstyled mb-4">
-                        <li
-                          class="active d-flex justify-content-between"
-                          data-target="inbox"
-                        >
-                          <a
-                            href="javascript:void(0);"
-                            class="d-flex flex-wrap align-items-center"
-                          >
-                            <i class="ti ti-mail ti-sm"></i>
-                            <span class="align-middle ms-2">Inbox</span>
-                          </a>
-                          <div
-                            class="badge bg-label-primary rounded-pill badge-center"
-                          >
-                            4
-                          </div>
-                        </li>
-                        <li class="d-flex" data-target="sent">
-                          <a
-                            href="javascript:void(0);"
-                            class="d-flex flex-wrap align-items-center"
-                          >
-                            <i class="ti ti-send ti-sm"></i>
-                            <span class="align-middle ms-2">Sent</span>
-                          </a>
-                        </li>
-                      </ul>
-
-                      <!--/ Email Filters -->
-                    </div>
-                  </div>
-                  <!--/ Email Sidebar -->
-
-                  <!-- Emails List -->
-                  <div class="col app-emails-list">
-                    <div class="shadow-none border-0">
-                      <div class="emails-list-header p-3 py-lg-3 py-2">
-                        <!-- Email List: Search -->
-                        <div
-                          class="d-flex justify-content-between align-items-center"
-                        >
-                          <div class="d-flex align-items-center w-100">
-                            <i
-                              class="ti ti-menu-2 ti-sm cursor-pointer d-block d-lg-none me-3"
-                              data-bs-toggle="sidebar"
-                              data-target="#app-email-sidebar"
-                              data-overlay
-                            ></i>
-                            <div class="mb-0 mb-lg-2 w-100">
-                              <div
-                                class="input-group input-group-merge shadow-none"
-                              >
-                                <span
-                                  class="input-group-text border-0 ps-0"
-                                  id="email-search"
-                                >
-                                  <i class="ti ti-search"></i>
-                                </span>
-                                <input
-                                  type="text"
-                                  class="form-control email-search-input border-0"
-                                  placeholder="Search mail"
-                                  aria-label="Search mail"
-                                  aria-describedby="email-search"
-                                />
-                              </div>
-                            </div>
-                          </div>
-                          <div class="d-flex align-items-center mb-0 mb-md-2">
-                            <i
-                              class="ti ti-rotate-clockwise ti-sm rotate-180 scaleX-n1-rtl cursor-pointer email-refresh me-2"
-                            ></i>
-                            <div class="dropdown d-flex align-self-center">
-                              <button
-                                class="btn p-0"
-                                type="button"
-                                id="emailsActions"
-                                data-bs-toggle="dropdown"
-                                aria-haspopup="true"
-                                aria-expanded="false"
-                              >
-                                <i class="ti ti-dots-vertical ti-sm"></i>
-                              </button>
-                            </div>
-                          </div>
-                        </div>
-                        <hr class="mx-n3 emails-list-header-hr" />
-                      </div>
-                      <hr class="container-m-nx m-0" />
-                      <!-- Email List: Items -->
-                      <div class="email-list pt-0">
-                        <ul class="list-unstyled m-0">
-                          <li
-                            class="email-list-item email-marked-read"
-                            data-sent="true"
-                            data-bs-toggle="sidebar"
-                            data-target="#app-email-view"
-                          >
-                            <div class="d-flex align-items-center">
-                              <div class="form-check mb-0">
-                                <input
-                                  class="email-list-item-input form-check-input"
-                                  type="checkbox"
-                                  id="email-2"
-                                />
-                                <label
-                                  class="form-check-label"
-                                  for="email-2"
-                                ></label>
-                              </div>
-                              <i
-                                class="email-list-item-bookmark ti ti-star ti-sm d-sm-inline-block d-none cursor-pointer ms-2 me-3"
-                              ></i>
-
-                              <div
-                                class="email-list-item-content ms-2 ms-sm-0 me-2"
-                              >
-                                <span class="h6 email-list-item-username me-2"
-                                  >Administration</span
-                                >
-                                <span
-                                  class="email-list-item-subject d-xl-inline-block d-block"
-                                >
-                                  absences</span
-                                >
-                              </div>
-                              <div
-                                class="email-list-item-meta ms-auto d-flex align-items-center"
-                              >
-                                <span
-                                  class="email-list-item-label badge badge-dot bg-info d-none d-md-inline-block me-2"
-                                  data-label="important"
-                                ></span>
-                                <small class="email-list-item-time text-muted"
-                                  >10:12 AM</small
-                                >
-                                <ul
-                                  class="list-inline email-list-item-actions text-nowrap"
-                                >
-                                  <li class="list-inline-item email-unread">
-                                    <i class="ti ti-mail ti-sm"></i>
-                                  </li>
-                                  <li class="list-inline-item email-delete">
-                                    <i class="ti ti-trash ti-sm"></i>
-                                  </li>
-                                  <li class="list-inline-item">
-                                    <i class="ti ti-archive ti-sm"></i>
-                                  </li>
-                                </ul>
-                              </div>
-                            </div>
-                          </li>
-                          <li
-                            class="email-list-item email-marked-read"
-                            data-sent="true"
-                            data-bs-toggle="sidebar"
-                            data-target="#app-email-view"
-                          >
-                            <div class="d-flex align-items-center">
-                              <div class="form-check mb-0">
-                                <input
-                                  class="email-list-item-input form-check-input"
-                                  type="checkbox"
-                                  id="email-2"
-                                />
-                                <label
-                                  class="form-check-label"
-                                  for="email-2"
-                                ></label>
-                              </div>
-                              <i
-                                class="email-list-item-bookmark ti ti-star ti-sm d-sm-inline-block d-none cursor-pointer ms-2 me-3"
-                              ></i>
-
-                              <div
-                                class="email-list-item-content ms-2 ms-sm-0 me-2"
-                              >
-                                <span class="h6 email-list-item-username me-2"
-                                  >Administration</span
-                                >
-                                <span
-                                  class="email-list-item-subject d-xl-inline-block d-block"
-                                >
-                                  absences</span
-                                >
-                              </div>
-                              <div
-                                class="email-list-item-meta ms-auto d-flex align-items-center"
-                              >
-                                <span
-                                  class="email-list-item-label badge badge-dot bg-info d-none d-md-inline-block me-2"
-                                  data-label="important"
-                                ></span>
-                                <small class="email-list-item-time text-muted"
-                                  >10:12 AM</small
-                                >
-                                <ul
-                                  class="list-inline email-list-item-actions text-nowrap"
-                                >
-                                  <li class="list-inline-item email-unread">
-                                    <i class="ti ti-mail ti-sm"></i>
-                                  </li>
-                                  <li class="list-inline-item email-delete">
-                                    <i class="ti ti-trash ti-sm"></i>
-                                  </li>
-                                  <li class="list-inline-item">
-                                    <i class="ti ti-archive ti-sm"></i>
-                                  </li>
-                                </ul>
-                              </div>
-                            </div>
-                          </li>
-                          <li
-                            class="email-list-item email-marked-read"
-                            data-sent="true"
-                            data-bs-toggle="sidebar"
-                            data-target="#app-email-view"
-                          >
-                            <div class="d-flex align-items-center">
-                              <div class="form-check mb-0">
-                                <input
-                                  class="email-list-item-input form-check-input"
-                                  type="checkbox"
-                                  id="email-2"
-                                />
-                                <label
-                                  class="form-check-label"
-                                  for="email-2"
-                                ></label>
-                              </div>
-                              <i
-                                class="email-list-item-bookmark ti ti-star ti-sm d-sm-inline-block d-none cursor-pointer ms-2 me-3"
-                              ></i>
-
-                              <div
-                                class="email-list-item-content ms-2 ms-sm-0 me-2"
-                              >
-                                <span class="h6 email-list-item-username me-2"
-                                  >Administration</span
-                                >
-                                <span
-                                  class="email-list-item-subject d-xl-inline-block d-block"
-                                >
-                                  absences</span
-                                >
-                              </div>
-                              <div
-                                class="email-list-item-meta ms-auto d-flex align-items-center"
-                              >
-                                <span
-                                  class="email-list-item-label badge badge-dot bg-info d-none d-md-inline-block me-2"
-                                  data-label="important"
-                                ></span>
-                                <small class="email-list-item-time text-muted"
-                                  >10:12 AM</small
-                                >
-                                <ul
-                                  class="list-inline email-list-item-actions text-nowrap"
-                                >
-                                  <li class="list-inline-item email-unread">
-                                    <i class="ti ti-mail ti-sm"></i>
-                                  </li>
-                                  <li class="list-inline-item email-delete">
-                                    <i class="ti ti-trash ti-sm"></i>
-                                  </li>
-                                  <li class="list-inline-item">
-                                    <i class="ti ti-archive ti-sm"></i>
-                                  </li>
-                                </ul>
-                              </div>
-                            </div>
-                          </li>
-                          <li
-                            class="email-list-item email-marked-read"
-                            data-sent="true"
-                            data-bs-toggle="sidebar"
-                            data-target="#app-email-view"
-                          >
-                            <div class="d-flex align-items-center">
-                              <div class="form-check mb-0">
-                                <input
-                                  class="email-list-item-input form-check-input"
-                                  type="checkbox"
-                                  id="email-2"
-                                />
-                                <label
-                                  class="form-check-label"
-                                  for="email-2"
-                                ></label>
-                              </div>
-                              <i
-                                class="email-list-item-bookmark ti ti-star ti-sm d-sm-inline-block d-none cursor-pointer ms-2 me-3"
-                              ></i>
-
-                              <div
-                                class="email-list-item-content ms-2 ms-sm-0 me-2"
-                              >
-                                <span class="h6 email-list-item-username me-2"
-                                  >Administration</span
-                                >
-                                <span
-                                  class="email-list-item-subject d-xl-inline-block d-block"
-                                >
-                                  absences</span
-                                >
-                              </div>
-                              <div
-                                class="email-list-item-meta ms-auto d-flex align-items-center"
-                              >
-                                <span
-                                  class="email-list-item-label badge badge-dot bg-info d-none d-md-inline-block me-2"
-                                  data-label="important"
-                                ></span>
-                                <small class="email-list-item-time text-muted"
-                                  >10:12 AM</small
-                                >
-                                <ul
-                                  class="list-inline email-list-item-actions text-nowrap"
-                                >
-                                  <li class="list-inline-item email-unread">
-                                    <i class="ti ti-mail ti-sm"></i>
-                                  </li>
-                                  <li class="list-inline-item email-delete">
-                                    <i class="ti ti-trash ti-sm"></i>
-                                  </li>
-                                  <li class="list-inline-item">
-                                    <i class="ti ti-archive ti-sm"></i>
-                                  </li>
-                                </ul>
-                              </div>
-                            </div>
-                          </li>
-                          <li
-                            class="email-list-item email-marked-read"
-                            data-sent="true"
-                            data-bs-toggle="sidebar"
-                            data-target="#app-email-view"
-                          >
-                            <div class="d-flex align-items-center">
-                              <div class="form-check mb-0">
-                                <input
-                                  class="email-list-item-input form-check-input"
-                                  type="checkbox"
-                                  id="email-2"
-                                />
-                                <label
-                                  class="form-check-label"
-                                  for="email-2"
-                                ></label>
-                              </div>
-                              <i
-                                class="email-list-item-bookmark ti ti-star ti-sm d-sm-inline-block d-none cursor-pointer ms-2 me-3"
-                              ></i>
-
-                              <div
-                                class="email-list-item-content ms-2 ms-sm-0 me-2"
-                              >
-                                <span class="h6 email-list-item-username me-2"
-                                  >Administration</span
-                                >
-                                <span
-                                  class="email-list-item-subject d-xl-inline-block d-block"
-                                >
-                                  absences</span
-                                >
-                              </div>
-                              <div
-                                class="email-list-item-meta ms-auto d-flex align-items-center"
-                              >
-                                <span
-                                  class="email-list-item-label badge badge-dot bg-info d-none d-md-inline-block me-2"
-                                  data-label="important"
-                                ></span>
-                                <small class="email-list-item-time text-muted"
-                                  >10:12 AM</small
-                                >
-                                <ul
-                                  class="list-inline email-list-item-actions text-nowrap"
-                                >
-                                  <li class="list-inline-item email-unread">
-                                    <i class="ti ti-mail ti-sm"></i>
-                                  </li>
-                                  <li class="list-inline-item email-delete">
-                                    <i class="ti ti-trash ti-sm"></i>
-                                  </li>
-                                  <li class="list-inline-item">
-                                    <i class="ti ti-archive ti-sm"></i>
-                                  </li>
-                                </ul>
-                              </div>
-                            </div>
-                          </li>
-                        </ul>
-                        <ul class="list-unstyled m-0">
-                          <li class="email-list-empty text-center d-none">
-                            No items found.
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="app-overlay"></div>
-                  </div>
-                  <!-- /Emails List -->
-
-                  <!-- Email View -->
-                  <div
-                    class="col app-email-view flex-grow-0 bg-body"
-                    id="app-email-view"
-                  >
-                    <div
-                      class="card shadow-none border-0 rounded-0 app-email-view-header p-3 py-md-3 py-2"
-                    >
-                      <!-- Email View : Title  bar-->
-                      <div
-                        class="d-flex justify-content-between align-items-center py-2"
-                      >
-                        <div class="d-flex align-items-center overflow-hidden">
-                          <i
-                            class="ti ti-chevron-left ti-sm cursor-pointer me-2"
-                            data-bs-toggle="sidebar"
-                            data-target="#app-email-view"
-                          ></i>
-                          <h6 class="text-truncate mb-0 me-2">
-                            notification d'absences
-                          </h6>
-                        </div>
-                        <!-- Email View : Action  bar-->
-                        <div class="d-flex align-items-center">
-                          <i
-                            class="ti ti-printer ti-sm mt-1 cursor-pointer d-sm-block d-none"
-                          ></i>
-                          <div class="dropdown ms-3">
-                            <button
-                              class="btn p-0"
-                              type="button"
-                              id="dropdownMoreOptions"
-                              data-bs-toggle="dropdown"
-                              aria-haspopup="true"
-                              aria-expanded="false"
-                            >
-                              <i class="ti ti-dots-vertical ti-sm"></i>
-                            </button>
-                            <div
-                              class="dropdown-menu dropdown-menu-end"
-                              aria-labelledby="dropdownMoreOptions"
-                            >
-                              <a
-                                class="dropdown-item"
-                                href="javascript:void(0)"
-                              >
-                                <i class="ti ti-mail ti-xs me-1"></i>
-                                <span class="align-middle">Mark as unread</span>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <hr class="app-email-view-hr mx-n3 mb-2" />
-                      <div
-                        class="d-flex justify-content-between align-items-center"
-                      >
-                        <div class="d-flex align-items-center">
-                          <i
-                            class="ti ti-trash ti-sm cursor-pointer me-3"
-                            data-bs-toggle="sidebar"
-                            data-target="#app-email-view"
-                          ></i>
-                          <i
-                            class="ti ti-mail-opened ti-sm cursor-pointer me-3"
-                          ></i>
-                          <div class="dropdown me-3">
-                            <button
-                              class="btn p-0"
-                              type="button"
-                              id="dropdownMenuFolderTwo"
-                              data-bs-toggle="dropdown"
-                              aria-haspopup="true"
-                              aria-expanded="false"
-                            >
-                              <i class="ti ti-folder ti-sm"></i>
-                            </button>
-                          </div>
-                          <div class="dropdown me-3">
-                            <button
-                              class="btn p-0"
-                              type="button"
-                              id="dropdownLabelTwo"
-                              data-bs-toggle="dropdown"
-                              aria-haspopup="true"
-                              aria-expanded="false"
-                            >
-                              <i class="ti ti-tag ti-sm"></i>
-                            </button>
-                            <div
-                              class="dropdown-menu dropdown-menu-end"
-                              aria-labelledby="dropdownLabelTwo"
-                            >
-                              <a
-                                class="dropdown-item"
-                                href="javascript:void(0)"
-                              >
-                                <i class="badge badge-dot bg-success me-1"></i>
-                                <span class="align-middle">Workshop</span>
-                              </a>
-                              <a
-                                class="dropdown-item"
-                                href="javascript:void(0)"
-                              >
-                                <i class="badge badge-dot bg-primary me-1"></i>
-                                <span class="align-middle">Company</span>
-                              </a>
-                              <a
-                                class="dropdown-item"
-                                href="javascript:void(0)"
-                              >
-                                <i class="badge badge-dot bg-info me-1"></i>
-                                <span class="align-middle">Important</span>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                        <div
-                          class="d-flex align-items-center flex-wrap justify-content-end"
-                        >
-                          <span class="d-sm-block d-none mx-3 text-muted"
-                            >1-10 of 653</span
-                          >
-                        </div>
-                      </div>
-                    </div>
-                    <hr class="m-0" />
-
-                    <!-- Email View : Last mail-->
-                    <div class="card email-card-last mx-sm-4 mx-3 mt-4">
-                      <div
-                        class="card-header d-flex justify-content-between align-items-center flex-wrap"
-                      >
-                        <div class="d-flex align-items-center mb-sm-0 mb-3">
-                          <div class="flex-grow-1 ms-1">
-                            <h6 class="m-0">Rahma chriha</h6>
-                            <small class="text-muted">rahma@email.com</small>
-                          </div>
-                        </div>
-                        <div class="d-flex align-items-center">
-                          <p class="mb-0 me-3 text-muted">
-                            June 20th 2020, 08:10 AM
-                          </p>
-                          <div class="dropdown me-3 d-flex align-self-center">
-                            <button
-                              class="btn p-0"
-                              type="button"
-                              id="dropdownEmailTwo"
-                              data-bs-toggle="dropdown"
-                              aria-haspopup="true"
-                              aria-expanded="false"
-                            >
-                              <i class="ti ti-dots-vertical"></i>
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="card-body">
-                        <p class="fw-medium">notification!</p>
-                        <p>votre fils est absent</p>
-                        <p>pour la raison de</p>
-                      </div>
-                    </div>
-                  </div>
+                    Nouvelle Demande
+                  </button>
                 </div>
-                <!-- Email View -->
+
+                <div class="card-body">
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th>Type de Document</th>
+                        <th>Date de Demande</th>
+                        <th>Statut</th>
+                      </tr>
+                    </thead>
+                    <tbody id="demandeTableBody">
+                      <!-- Accepted demande -->
+                      <tr>
+                        <td>Attestation de Présence</td>
+                        <td>05 Mai 2025</td>
+                        <td><span class="badge bg-success">Acceptée</span></td>
+                        <td>
+                          <a
+                            href="document/presence_2025.pdf"
+                            class="btn btn-sm btn-outline-primary"
+                            download
+                          >
+                            <i class="ti ti-download"></i> Télécharger
+                          </a>
+                        </td>
+                      </tr>
+                      <!-- Declined demande -->
+                      <tr>
+                        <td>Attestation d'Inscription</td>
+                        <td>02 Mai 2025</td>
+                        <td><span class="badge bg-danger">Refusée</span></td>
+                        <td>
+                          <span class="text-muted"
+                            >Aucune action disponible</span
+                          >
+                        </td>
+                      </tr>
+                      <!-- Example of pending demande -->
+                      <tr>
+                        <td>Attestation de Réussite</td>
+                        <td>06 Mai 2025</td>
+                        <td>
+                          <span class="badge bg-warning">En attente</span>
+                        </td>
+                        <td>
+                          <span class="text-muted">Traitement en cours</span>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
 
-              
-              <div class="modal fade app-email-compose" id="emailComposeSidebar" tabindex="-1" aria-hidden="true">
-                <div class="modal-dialog modal-lg" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header py-3 bg-body">
-                      <h5 class="modal-title fs-5">Compose Mail</h5>
-                      <button
-                        type="button"
-                        class="btn-close"
-                        data-bs-dismiss="modal"
-                        aria-label="Close"
-                      ></button>
-                    </div>
-                    <div class="modal-body flex-grow-1 pb-sm-0 p-4 py-2">
-                      <form class="email-compose-form">
-                        <div
-                          class="email-compose-to d-flex justify-content-between align-items-center"
-                        >
-                          <label class="form-label mb-0" for="emailContacts"
-                            >To:</label
-                          >
-                          <div
-                            class="select2-primary border-0 shadow-none flex-grow-1 mx-2"
+              <!-- Modal -->
+              <div
+                class="modal fade"
+                id="addDemandeModal"
+                tabindex="-1"
+                aria-labelledby="addDemandeModalLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog">
+                  <form id="demandeForm">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="addDemandeModalLabel">
+                          Nouvelle Demande
+                        </h5>
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Fermer"
+                        ></button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="mb-3">
+                          <label for="docType" class="form-label"
+                            >Type de Document</label
                           >
                           <select
-                          class="select2 select-email-contacts form-select"
-                          id="emailContacts"
-                          name="emailContacts"
-                          multiple>
-                          <option data-avatar="1.png" value="Rahma">Rahma</option>
-                                <option data-avatar="3.png" value="Si Louay">Si Louay</option>
-                                <option data-avatar="5.png" value="Zack">Zack</option>
-                                <option data-avatar="7.png" value="Si Ghassen">Si Ghassen</option>
-                                <option data-avatar="9.png" value="Sandy Vega">Sandy Vega</option>
-                                <option data-avatar="11.png" value="Cheryl May">Cheryl May</option>
-                        </select>
-                          </div>
-                          <div class="email-compose-toggle-wrapper">
-                            <a
-                              class="email-compose-toggle-cc"
-                              href="javascript:void(0);"
-                              >Cc |</a
-                            >
-                            <a
-                              class="email-compose-toggle-bcc"
-                              href="javascript:void(0);"
-                              >Bcc</a
-                            >
-                          </div>
-                        </div>
-
-                        <div class="email-compose-cc d-none">
-                          <hr class="container-m-nx my-2" />
-                          <div class="d-flex align-items-center">
-                            <label for="email-cc" class="form-label mb-0"
-                              >Cc:
-                            </label>
-                            <input
-                              type="text"
-                              class="form-control border-0 shadow-none flex-grow-1 mx-2"
-                              id="email-cc"
-                              placeholder="someone@email.com"
-                            />
-                          </div>
-                        </div>
-                        <div class="email-compose-bcc d-none">
-                          <hr class="container-m-nx my-2" />
-                          <div class="d-flex align-items-center">
-                            <label for="email-bcc" class="form-label mb-0"
-                              >Bcc:
-                            </label>
-                            <input
-                              type="text"
-                              class="form-control border-0 shadow-none flex-grow-1 mx-2"
-                              id="email-bcc"
-                              placeholder="someone@email.com"
-                            />
-                          </div>
-                        </div>
-                        <hr class="container-m-nx my-2" />
-                        <div
-                          class="email-compose-subject d-flex align-items-center mb-2"
-                        >
-                          <label for="email-subject" class="form-label mb-0"
-                            >Subject:</label
+                            class="select2 form-select"
+                            id="docType"
+                            required
                           >
-                          <input
-                            type="text"
-                            class="form-control border-0 shadow-none flex-grow-1 mx-2"
-                            id="email-subject"
-                            placeholder="Project Details"
-                          />
+                            <option value="">Sélectionner...</option>
+                            <option value="presence">
+                              Certificat de présence
+                            </option>
+                            <option value="inscription">
+                              Certificat d'inscription
+                            </option>
+                          </select>
                         </div>
-                        <div class="email-compose-message container-m-nx">
-                          <div class="d-flex justify-content-end">
-                            <div
-                              class="email-editor-toolbar border-0 w-100 border-top"
-                            >
-                              <span class="ql-formats me-0">
-                                <button class="ql-bold"></button>
-                                <button class="ql-italic"></button>
-                                <button class="ql-underline"></button>
-                                <button
-                                  class="ql-list"
-                                  value="ordered"
-                                ></button>
-                                <button class="ql-list" value="bullet"></button>
-                                <button class="ql-link"></button>
-                                <button class="ql-image"></button>
-                              </span>
-                            </div>
-                          </div>
-                          <div class="email-editor border-0 border-top"></div>
-                        </div>
-                        <hr class="container-m-nx mt-0 mb-2" />
-                        <div
-                          class="email-compose-actions d-flex justify-content-between align-items-center mt-3 mb-3"
-                        >
-                          <div class="d-flex align-items-center">
-                            <div class="btn-group">
-                              <button
-                                type="reset"
-                                class="btn btn-primary"
-                                data-bs-dismiss="modal"
-                                aria-label="Close"
-                              >
-                                <i class="ti ti-send ti-xs me-1"></i>Send
-                              </button>
-                              <button
-                                type="button"
-                                class="btn btn-primary dropdown-toggle dropdown-toggle-split"
-                                data-bs-toggle="dropdown"
-                                aria-haspopup="true"
-                                aria-expanded="false"
-                              >
-                                <span class="visually-hidden"
-                                  >Send Options</span
-                                >
-                              </button>
-                              <ul class="dropdown-menu">
-                                <li>
-                                  <a
-                                    class="dropdown-item"
-                                    href="javascript:void(0);"
-                                    >Schedule send</a
-                                  >
-                                </li>
-                                <li>
-                                  <a
-                                    class="dropdown-item"
-                                    href="javascript:void(0);"
-                                    >Save draft</a
-                                  >
-                                </li>
-                              </ul>
-                            </div>
-                            <label for="attach-file"
-                              ><i
-                                class="ti ti-paperclip cursor-pointer ms-2"
-                              ></i
-                            ></label>
-                            <input
-                              type="file"
-                              name="file-input"
-                              class="d-none"
-                              id="attach-file"
-                            />
-                          </div>
-                          <div class="d-flex align-items-center">
-                            <div class="dropdown">
-                              <button
-                                class="btn p-0"
-                                type="button"
-                                id="dropdownMoreActions"
-                                data-bs-toggle="dropdown"
-                                aria-haspopup="true"
-                                aria-expanded="false"
-                              >
-                                <i class="ti ti-dots-vertical"></i>
-                              </button>
-                              <ul
-                                class="dropdown-menu"
-                                aria-labelledby="dropdownMoreActions"
-                              >
-                                <li>
-                                  <button type="button" class="dropdown-item">
-                                    Add Label
-                                  </button>
-                                </li>
-                                <li>
-                                  <button type="button" class="dropdown-item">
-                                    Plain text mode
-                                  </button>
-                                </li>
-                                <li>
-                                  <hr class="dropdown-divider" />
-                                </li>
-                                <li>
-                                  <button type="button" class="dropdown-item">
-                                    Print
-                                  </button>
-                                </li>
-                                <li>
-                                  <button type="button" class="dropdown-item">
-                                    Check Spelling
-                                  </button>
-                                </li>
-                              </ul>
-                            </div>
-                            <button
-                              type="reset"
-                              class="btn"
-                              data-bs-dismiss="modal"
-                              aria-label="Close"
-                            >
-                              <i class="ti ti-trash"></i>
-                            </button>
-                          </div>
-                        </div>
-                      </form>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">
+                          Envoyer
+                        </button>
+                      </div>
                     </div>
-                   
-                  </div>
+                  </form>
                 </div>
               </div>
-              <!-- /Compose Email -->
             </div>
             <!-- / Content -->
 
@@ -1184,8 +494,38 @@
 
     <!-- Main JS -->
     <script src="../../assets/js/main.js"></script>
+    <script>
+      document
+        .getElementById("demandeForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const type = document.getElementById("docType").value;
+          const typeLabel =
+            type === "presence"
+              ? "Certificat de présence"
+              : "Certificat d'inscription";
+          const date = new Date().toLocaleDateString("fr-FR");
 
-    <!-- Page JS -->
-    <script src="../../assets/js/app-email.js"></script>
+          const row = `
+          <tr>
+            <td>${typeLabel}</td>
+            <td>${date}</td>
+            <td><span class="badge bg-warning">En attente</span></td>
+            <td>
+                        <span class="text-muted">Traitement en cours</span>
+                      </td>
+          </tr>
+        `;
+
+          document
+            .getElementById("demandeTableBody")
+            .insertAdjacentHTML("beforeend", row);
+          document.getElementById("demandeForm").reset();
+          const modal = bootstrap.Modal.getInstance(
+            document.getElementById("addDemandeModal")
+          );
+          modal.hide();
+        });
+    </script>
   </body>
 </html>
