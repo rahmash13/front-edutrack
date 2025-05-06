@@ -6,26 +6,33 @@
   dir="ltr"
   data-theme="theme-default"
   data-assets-path="../../assets/"
-  data-template="horizontal-menu-template">
+  data-template="horizontal-menu-template"
+>
   <head>
     <meta charset="utf-8" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+      content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
+    />
 
     <title>Notification</title>
 
     <meta name="description" content="" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="../../assets/img/favicon/favicon.ico" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../../assets/img/favicon/favicon.ico"
+    />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&ampdisplay=swap"
-      rel="stylesheet" />
+      rel="stylesheet"
+    />
 
     <!-- Icons -->
     <link rel="stylesheet" href="../../assets/vendor/fonts/fontawesome.css" />
@@ -33,8 +40,16 @@
     <link rel="stylesheet" href="../../assets/vendor/fonts/flag-icons.css" />
 
     <!-- Core CSS -->
-    <link rel="stylesheet" href="../../assets/vendor/css/rtl/core.css" class="template-customizer-core-css" />
-    <link rel="stylesheet" href="../../assets/vendor/css/rtl/theme-default.css" class="template-customizer-theme-css" />
+    <link
+      rel="stylesheet"
+      href="../../assets/vendor/css/rtl/core.css"
+      class="template-customizer-core-css"
+    />
+    <link
+      rel="stylesheet"
+      href="../../assets/vendor/css/rtl/theme-default.css"
+      class="template-customizer-theme-css"
+    />
     <link rel="stylesheet" href="../../assets/css/demo.css" />
 
     <!-- Vendors CSS -->
@@ -60,349 +75,204 @@
 
   <body>
     <!-- Layout wrapper -->
-    <div class="layout-wrapper layout-navbar-full layout-horizontal layout-without-menu">
+    <div class="layout-wrapper layout-content-navbar">
       <div class="layout-container">
-        <!-- Navbar -->
+        <!-- Menu -->
 
-        <nav class="layout-navbar navbar navbar-expand-xl align-items-center bg-navbar-theme" id="layout-navbar">
-          <div class="container-xxl">
-            <div class="navbar-brand app-brand demo d-none d-xl-flex py-0 me-4">
-              <a href="index.html" class="app-brand-link gap-2">
-                <span class="app-brand-logo demo">
-                  <svg width="32" height="22" viewBox="0 0 32 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M0.00172773 0V6.85398C0.00172773 6.85398 -0.133178 9.01207 1.98092 10.8388L13.6912 21.9964L19.7809 21.9181L18.8042 9.88248L16.4951 7.17289L9.23799 0H0.00172773Z"
-                      fill="#7367F0" />
-                    <path
-                      opacity="0.06"
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M7.69824 16.4364L12.5199 3.23696L16.5541 7.25596L7.69824 16.4364Z"
-                      fill="#161616" />
-                    <path
-                      opacity="0.06"
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M8.07751 15.9175L13.9419 4.63989L16.5849 7.28475L8.07751 15.9175Z"
-                      fill="#161616" />
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M7.77295 16.3566L23.6563 0H32V6.88383C32 6.88383 31.8262 9.17836 30.6591 10.4057L19.7824 22H13.6938L7.77295 16.3566Z"
-                      fill="#7367F0" />
-                  </svg>
-                </span>
-                <span class="app-brand-text demo menu-text fw-bold">Edutrack</span>
+        <aside
+          id="layout-menu"
+          class="layout-menu menu-vertical menu bg-menu-theme"
+        >
+          <div class="app-brand demo">
+            <a href="/index.html" class="app-brand-link">
+              <span class="app-brand-logo demo">
+                <svg
+                  width="32"
+                  height="22"
+                  viewBox="0 0 32 22"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M0.00172773 0V6.85398C0.00172773 6.85398 -0.133178 9.01207 1.98092 10.8388L13.6912 21.9964L19.7809 21.9181L18.8042 9.88248L16.4951 7.17289L9.23799 0H0.00172773Z"
+                    fill="#7367F0"
+                  />
+                  <path
+                    opacity="0.06"
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M7.69824 16.4364L12.5199 3.23696L16.5541 7.25596L7.69824 16.4364Z"
+                    fill="#161616"
+                  />
+                  <path
+                    opacity="0.06"
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M8.07751 15.9175L13.9419 4.63989L16.5849 7.28475L8.07751 15.9175Z"
+                    fill="#161616"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M7.77295 16.3566L23.6563 0H32V6.88383C32 6.88383 31.8262 9.17836 30.6591 10.4057L19.7824 22H13.6938L7.77295 16.3566Z"
+                    fill="#7367F0"
+                  />
+                </svg>
+              </span>
+              <span class="app-brand-text demo menu-text fw-bold"
+                >Edutrack</span
+              >
+            </a>
+
+            <a
+              href="javascript:void(0);"
+              class="layout-menu-toggle menu-link text-large ms-auto"
+            >
+              <i
+                class="ti menu-toggle-icon d-none d-xl-block ti-sm align-middle"
+              ></i>
+              <i class="ti ti-x d-block d-xl-none ti-sm align-middle"></i>
+            </a>
+          </div>
+
+          <div class="menu-inner-shadow"></div>
+
+          <ul class="menu-inner py-1">
+            <!-- Page -->
+
+            <li class="menu-item">
+              <a href="/student/" class="menu-link">
+                <i class="menu-icon tf-icons ti ti-smart-home"></i>
+                <div data-i18n="eleve">Emploi du Temps</div>
               </a>
-
-              <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-xl-none">
-                <i class="ti ti-x ti-sm align-middle"></i>
+            </li>
+            <li class="menu-item">
+              <a href="/student/notes/notes.html" class="menu-link">
+                <i class="menu-icon tf-icons ti ti-user"></i>
+                <div data-i18n="parent">Les Notes</div>
               </a>
-            </div>
+            </li>
+            <li class="menu-item">
+              <a href="/student/absences/absences.html" class="menu-link">
+                <i class="menu-icon tf-icons ti ti-school"></i>
+                <div data-i18n="classe">Les Absences</div>
+              </a>
+            </li>
+            <li class="menu-item active">
+              <a href="/student/notification/notif.html" class="menu-link">
+                <i class="menu-icon tf-icons ti ti-file"></i>
+                <div data-i18n="bulletins">Notifications</div>
+              </a>
+            </li>
+          </ul>
+        </aside>
+        <!-- / Menu -->
 
-            <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
-              <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
+        <!-- Layout container -->
+        <div class="layout-page">
+          <!-- Navbar -->
+
+          <nav
+            class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
+            id="layout-navbar"
+          >
+            <div
+              class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none"
+            >
+              <a
+                class="nav-item nav-link px-0 me-xl-4"
+                href="javascript:void(0)"
+              >
                 <i class="ti ti-menu-2 ti-sm"></i>
               </a>
             </div>
 
-            <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
-              <ul class="navbar-nav flex-row align-items-center ms-auto">
-               
-
-    
-
-                <!-- Style Switcher -->
-                <li class="nav-item dropdown-style-switcher dropdown me-2 me-xl-0">
-                  <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
-                    <i class="ti ti-md"></i>
-                  </a>
-                  <ul class="dropdown-menu dropdown-menu-end dropdown-styles">
-                    <li>
-                      <a class="dropdown-item" href="javascript:void(0);" data-theme="light">
-                        <span class="align-middle"><i class="ti ti-sun me-2"></i>Light</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="javascript:void(0);" data-theme="dark">
-                        <span class="align-middle"><i class="ti ti-moon me-2"></i>Dark</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="javascript:void(0);" data-theme="system">
-                        <span class="align-middle"><i class="ti ti-device-desktop me-2"></i>System</span>
-                      </a>
-                    </li>
-                  </ul>
-                </li>
-                <!-- / Style Switcher-->
-
-           
-
-                <!-- Notification -->
-                <li class="nav-item dropdown-notifications navbar-dropdown dropdown me-3 me-xl-1">
+            <div
+              class="navbar-nav-right d-flex align-items-center"
+              id="navbar-collapse"
+            >
+              <div class="navbar-nav align-items-center">
+                <div
+                  class="nav-item dropdown-style-switcher dropdown me-2 me-xl-0"
+                >
                   <a
                     class="nav-link dropdown-toggle hide-arrow"
                     href="javascript:void(0);"
                     data-bs-toggle="dropdown"
-                    data-bs-auto-close="outside"
-                    aria-expanded="false">
-                    <i class="ti ti-bell ti-md"></i>
-                    <span class="badge bg-danger rounded-pill badge-notifications">5</span>
+                  >
+                    <i class="ti ti-md"></i>
                   </a>
-                  <ul class="dropdown-menu dropdown-menu-end py-0">
-                    <li class="dropdown-menu-header border-bottom">
-                      <div class="dropdown-header d-flex align-items-center py-3">
-                        <h5 class="text-body mb-0 me-auto">Notification</h5>
-                        <a
-                          href="javascript:void(0)"
-                          class="dropdown-notifications-all text-body"
-                          data-bs-toggle="tooltip"
-                          data-bs-placement="top"
-                          title="Mark all as read"
-                          ><i class="ti ti-mail-opened fs-4"></i
-                        ></a>
-                      </div>
-                    </li>
-                    <li class="dropdown-notifications-list scrollable-container">
-                      <ul class="list-group list-group-flush">
-                        <li class="list-group-item list-group-item-action dropdown-notifications-item">
-                          <div class="d-flex">
-                            <div class="flex-shrink-0 me-3">
-                              <div class="avatar">
-                                <img src="../../assets/img/avatars/1.png" alt class="h-auto rounded-circle" />
-                              </div>
-                            </div>
-                            <div class="flex-grow-1">
-                              <h6 class="mb-1">Congratulation Lettie 🎉</h6>
-                              <p class="mb-0">Won the monthly best seller gold badge</p>
-                              <small class="text-muted">1h ago</small>
-                            </div>
-                            <div class="flex-shrink-0 dropdown-notifications-actions">
-                              <a href="javascript:void(0)" class="dropdown-notifications-read"
-                                ><span class="badge badge-dot"></span
-                              ></a>
-                              <a href="javascript:void(0)" class="dropdown-notifications-archive"
-                                ><span class="ti ti-x"></span
-                              ></a>
-                            </div>
-                          </div>
-                        </li>
-                        <li class="list-group-item list-group-item-action dropdown-notifications-item">
-                          <div class="d-flex">
-                            <div class="flex-shrink-0 me-3">
-                              <div class="avatar">
-                                <span class="avatar-initial rounded-circle bg-label-danger">CF</span>
-                              </div>
-                            </div>
-                            <div class="flex-grow-1">
-                              <h6 class="mb-1">Charles Franklin</h6>
-                              <p class="mb-0">Accepted your connection</p>
-                              <small class="text-muted">12hr ago</small>
-                            </div>
-                            <div class="flex-shrink-0 dropdown-notifications-actions">
-                              <a href="javascript:void(0)" class="dropdown-notifications-read"
-                                ><span class="badge badge-dot"></span
-                              ></a>
-                              <a href="javascript:void(0)" class="dropdown-notifications-archive"
-                                ><span class="ti ti-x"></span
-                              ></a>
-                            </div>
-                          </div>
-                        </li>
-                        <li class="list-group-item list-group-item-action dropdown-notifications-item marked-as-read">
-                          <div class="d-flex">
-                            <div class="flex-shrink-0 me-3">
-                              <div class="avatar">
-                                <img src="../../assets/img/avatars/2.png" alt class="h-auto rounded-circle" />
-                              </div>
-                            </div>
-                            <div class="flex-grow-1">
-                              <h6 class="mb-1">New Message ✉️</h6>
-                              <p class="mb-0">You have new message from Natalie</p>
-                              <small class="text-muted">1h ago</small>
-                            </div>
-                            <div class="flex-shrink-0 dropdown-notifications-actions">
-                              <a href="javascript:void(0)" class="dropdown-notifications-read"
-                                ><span class="badge badge-dot"></span
-                              ></a>
-                              <a href="javascript:void(0)" class="dropdown-notifications-archive"
-                                ><span class="ti ti-x"></span
-                              ></a>
-                            </div>
-                          </div>
-                        </li>
-                        <li class="list-group-item list-group-item-action dropdown-notifications-item">
-                          <div class="d-flex">
-                            <div class="flex-shrink-0 me-3">
-                              <div class="avatar">
-                                <span class="avatar-initial rounded-circle bg-label-success"
-                                  ><i class="ti ti-shopping-cart"></i
-                                ></span>
-                              </div>
-                            </div>
-                            <div class="flex-grow-1">
-                              <h6 class="mb-1">Whoo! You have new order 🛒</h6>
-                              <p class="mb-0">ACME Inc. made new order $1,154</p>
-                              <small class="text-muted">1 day ago</small>
-                            </div>
-                            <div class="flex-shrink-0 dropdown-notifications-actions">
-                              <a href="javascript:void(0)" class="dropdown-notifications-read"
-                                ><span class="badge badge-dot"></span
-                              ></a>
-                              <a href="javascript:void(0)" class="dropdown-notifications-archive"
-                                ><span class="ti ti-x"></span
-                              ></a>
-                            </div>
-                          </div>
-                        </li>
-                        <li class="list-group-item list-group-item-action dropdown-notifications-item marked-as-read">
-                          <div class="d-flex">
-                            <div class="flex-shrink-0 me-3">
-                              <div class="avatar">
-                                <img src="../../assets/img/avatars/9.png" alt class="h-auto rounded-circle" />
-                              </div>
-                            </div>
-                            <div class="flex-grow-1">
-                              <h6 class="mb-1">Application has been approved 🚀</h6>
-                              <p class="mb-0">Your ABC project application has been approved.</p>
-                              <small class="text-muted">2 days ago</small>
-                            </div>
-                            <div class="flex-shrink-0 dropdown-notifications-actions">
-                              <a href="javascript:void(0)" class="dropdown-notifications-read"
-                                ><span class="badge badge-dot"></span
-                              ></a>
-                              <a href="javascript:void(0)" class="dropdown-notifications-archive"
-                                ><span class="ti ti-x"></span
-                              ></a>
-                            </div>
-                          </div>
-                        </li>
-                        <li class="list-group-item list-group-item-action dropdown-notifications-item marked-as-read">
-                          <div class="d-flex">
-                            <div class="flex-shrink-0 me-3">
-                              <div class="avatar">
-                                <span class="avatar-initial rounded-circle bg-label-success"
-                                  ><i class="ti ti-chart-pie"></i
-                                ></span>
-                              </div>
-                            </div>
-                            <div class="flex-grow-1">
-                              <h6 class="mb-1">Monthly report is generated</h6>
-                              <p class="mb-0">July monthly financial report is generated</p>
-                              <small class="text-muted">3 days ago</small>
-                            </div>
-                            <div class="flex-shrink-0 dropdown-notifications-actions">
-                              <a href="javascript:void(0)" class="dropdown-notifications-read"
-                                ><span class="badge badge-dot"></span
-                              ></a>
-                              <a href="javascript:void(0)" class="dropdown-notifications-archive"
-                                ><span class="ti ti-x"></span
-                              ></a>
-                            </div>
-                          </div>
-                        </li>
-                        <li class="list-group-item list-group-item-action dropdown-notifications-item marked-as-read">
-                          <div class="d-flex">
-                            <div class="flex-shrink-0 me-3">
-                              <div class="avatar">
-                                <img src="../../assets/img/avatars/5.png" alt class="h-auto rounded-circle" />
-                              </div>
-                            </div>
-                            <div class="flex-grow-1">
-                              <h6 class="mb-1">Send connection request</h6>
-                              <p class="mb-0">Peter sent you connection request</p>
-                              <small class="text-muted">4 days ago</small>
-                            </div>
-                            <div class="flex-shrink-0 dropdown-notifications-actions">
-                              <a href="javascript:void(0)" class="dropdown-notifications-read"
-                                ><span class="badge badge-dot"></span
-                              ></a>
-                              <a href="javascript:void(0)" class="dropdown-notifications-archive"
-                                ><span class="ti ti-x"></span
-                              ></a>
-                            </div>
-                          </div>
-                        </li>
-                        <li class="list-group-item list-group-item-action dropdown-notifications-item">
-                          <div class="d-flex">
-                            <div class="flex-shrink-0 me-3">
-                              <div class="avatar">
-                                <img src="../../assets/img/avatars/6.png" alt class="h-auto rounded-circle" />
-                              </div>
-                            </div>
-                            <div class="flex-grow-1">
-                              <h6 class="mb-1">New message from Jane</h6>
-                              <p class="mb-0">Your have new message from Jane</p>
-                              <small class="text-muted">5 days ago</small>
-                            </div>
-                            <div class="flex-shrink-0 dropdown-notifications-actions">
-                              <a href="javascript:void(0)" class="dropdown-notifications-read"
-                                ><span class="badge badge-dot"></span
-                              ></a>
-                              <a href="javascript:void(0)" class="dropdown-notifications-archive"
-                                ><span class="ti ti-x"></span
-                              ></a>
-                            </div>
-                          </div>
-                        </li>
-                        <li class="list-group-item list-group-item-action dropdown-notifications-item marked-as-read">
-                          <div class="d-flex">
-                            <div class="flex-shrink-0 me-3">
-                              <div class="avatar">
-                                <span class="avatar-initial rounded-circle bg-label-warning"
-                                  ><i class="ti ti-alert-triangle"></i
-                                ></span>
-                              </div>
-                            </div>
-                            <div class="flex-grow-1">
-                              <h6 class="mb-1">CPU is running high</h6>
-                              <p class="mb-0">CPU Utilization Percent is currently at 88.63%,</p>
-                              <small class="text-muted">5 days ago</small>
-                            </div>
-                            <div class="flex-shrink-0 dropdown-notifications-actions">
-                              <a href="javascript:void(0)" class="dropdown-notifications-read"
-                                ><span class="badge badge-dot"></span
-                              ></a>
-                              <a href="javascript:void(0)" class="dropdown-notifications-archive"
-                                ><span class="ti ti-x"></span
-                              ></a>
-                            </div>
-                          </div>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="dropdown-menu-footer border-top">
+                  <ul class="dropdown-menu dropdown-menu-start dropdown-styles">
+                    <li>
                       <a
+                        class="dropdown-item"
                         href="javascript:void(0);"
-                        class="dropdown-item d-flex justify-content-center text-primary p-2 h-px-40 mb-1 align-items-center">
-                        View all notifications
+                        data-theme="light"
+                      >
+                        <span class="align-middle"
+                          ><i class="ti ti-sun me-2"></i>Light</span
+                        >
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="javascript:void(0);"
+                        data-theme="dark"
+                      >
+                        <span class="align-middle"
+                          ><i class="ti ti-moon me-2"></i>Dark</span
+                        >
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="javascript:void(0);"
+                        data-theme="system"
+                      >
+                        <span class="align-middle"
+                          ><i class="ti ti-device-desktop me-2"></i>System</span
+                        >
                       </a>
                     </li>
                   </ul>
-                </li>
-                <!--/ Notification -->
+                </div>
+              </div>
 
+              <ul class="navbar-nav flex-row align-items-center ms-auto">
                 <!-- User -->
                 <li class="nav-item navbar-dropdown dropdown-user dropdown">
-                  <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
+                  <a
+                    class="nav-link dropdown-toggle hide-arrow"
+                    href="javascript:void(0);"
+                    data-bs-toggle="dropdown"
+                  >
                     <div class="avatar avatar-online">
-                      <img src="../../assets/img/avatars/1.png" alt class="h-auto rounded-circle" />
+                      <img
+                        src="/assets/img/avatars/1.png"
+                        alt
+                        class="h-auto rounded-circle"
+                      />
                     </div>
                   </a>
                   <ul class="dropdown-menu dropdown-menu-end">
                     <li>
-                      <a class="dropdown-item" href="pages-account-settings-account.html">
+                      <a class="dropdown-item" href="#">
                         <div class="d-flex">
                           <div class="flex-shrink-0 me-3">
                             <div class="avatar avatar-online">
-                              <img src="../../assets/img/avatars/1.png" alt class="h-auto rounded-circle" />
+                              <img
+                                src="/assets/img/avatars/1.png"
+                                alt
+                                class="h-auto rounded-circle"
+                              />
                             </div>
                           </div>
                           <div class="flex-grow-1">
-                            <span class="fw-medium d-block">rahma chriha</span>
+                            <span class="fw-medium d-block">John Doe</span>
                             <small class="text-muted">Admin</small>
                           </div>
                         </div>
@@ -412,50 +282,25 @@
                       <div class="dropdown-divider"></div>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="pages-profile-user.html">
+                      <a class="dropdown-item" href="#">
                         <i class="ti ti-user-check me-2 ti-sm"></i>
-                        <span class="align-middle">My Profile</span>
+                        <span class="align-middle">Mon profile</span>
                       </a>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="pages-account-settings-account.html">
+                      <a class="dropdown-item" href="#">
                         <i class="ti ti-settings me-2 ti-sm"></i>
-                        <span class="align-middle">Settings</span>
+                        <span class="align-middle">Paramétres</span>
                       </a>
                     </li>
-                    <li>
-                      <a class="dropdown-item" href="pages-account-settings-billing.html">
-                        <span class="d-flex align-items-center align-middle">
-                          <i class="flex-shrink-0 ti ti-credit-card me-2 ti-sm"></i>
-                          <span class="flex-grow-1 align-middle">Billing</span>
-                          <span class="flex-shrink-0 badge badge-center rounded-pill bg-label-danger w-px-20 h-px-20"
-                            >2</span
-                          >
-                        </span>
-                      </a>
-                    </li>
+
                     <li>
                       <div class="dropdown-divider"></div>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="pages-faq.html">
-                        <i class="ti ti-help me-2 ti-sm"></i>
-                        <span class="align-middle">FAQ</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="pages-pricing.html">
-                        <i class="ti ti-currency-dollar me-2 ti-sm"></i>
-                        <span class="align-middle">Pricing</span>
-                      </a>
-                    </li>
-                    <li>
-                      <div class="dropdown-divider"></div>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="auth-login-cover.html" target="_blank">
+                      <a class="dropdown-item" href="#">
                         <i class="ti ti-logout me-2 ti-sm"></i>
-                        <span class="align-middle">Log Out</span>
+                        <span class="align-middle">Déconnexion</span>
                       </a>
                     </li>
                   </ul>
@@ -463,45 +308,29 @@
                 <!--/ User -->
               </ul>
             </div>
+          </nav>
 
-            <!-- Search Small Screens -->
-            <div class="navbar-search-wrapper search-input-wrapper container-xxl d-none">
-              <input
-                type="text"
-                class="form-control search-input border-0"
-                placeholder="Search..."
-                aria-label="Search..." />
-              <i class="ti ti-x ti-sm search-toggler cursor-pointer"></i>
-            </div>
-          </div>
-        </nav>
+          <!-- / Navbar -->
 
-        <!-- / Navbar -->
-
-        <!-- Layout container -->
-        <div class="layout-page">
           <!-- Content wrapper -->
           <div class="content-wrapper">
-            <!-- Menu -->
-            <aside id="layout-menu" class="layout-menu-horizontal menu-horizontal menu bg-menu-theme flex-grow-0">
-              <div class="container-xxl d-flex h-100">
-                <ul class="menu-inner">
-            </aside>
-            <!-- / Menu -->
-
             <!-- Content -->
 
             <div class="container-xxl flex-grow-1 container-p-y">
               <div class="app-email card">
                 <div class="row g-0">
                   <!-- Email Sidebar -->
-                  <div class="col app-email-sidebar border-end flex-grow-0" id="app-email-sidebar">
+                  <div
+                    class="col app-email-sidebar border-end flex-grow-0"
+                    id="app-email-sidebar"
+                  >
                     <div class="btn-compost-wrapper d-grid">
                       <button
                         class="btn btn-primary btn-compose"
                         data-bs-toggle="modal"
                         data-bs-target="#emailComposeSidebar"
-                        id="emailComposeSidebarLabel">
+                        id="emailComposeSidebarLabel"
+                      >
                         Compose
                       </button>
                     </div>
@@ -509,21 +338,34 @@
                     <div class="email-filters py-2">
                       <!-- Email Filters: Folder -->
                       <ul class="email-filter-folders list-unstyled mb-4">
-                        <li class="active d-flex justify-content-between" data-target="inbox">
-                          <a href="javascript:void(0);" class="d-flex flex-wrap align-items-center">
+                        <li
+                          class="active d-flex justify-content-between"
+                          data-target="inbox"
+                        >
+                          <a
+                            href="javascript:void(0);"
+                            class="d-flex flex-wrap align-items-center"
+                          >
                             <i class="ti ti-mail ti-sm"></i>
                             <span class="align-middle ms-2">Inbox</span>
                           </a>
-                          <div class="badge bg-label-primary rounded-pill badge-center">4</div>
+                          <div
+                            class="badge bg-label-primary rounded-pill badge-center"
+                          >
+                            4
+                          </div>
                         </li>
                         <li class="d-flex" data-target="sent">
-                          <a href="javascript:void(0);" class="d-flex flex-wrap align-items-center">
+                          <a
+                            href="javascript:void(0);"
+                            class="d-flex flex-wrap align-items-center"
+                          >
                             <i class="ti ti-send ti-sm"></i>
                             <span class="align-middle ms-2">Sent</span>
                           </a>
                         </li>
                       </ul>
-                    
+
                       <!--/ Email Filters -->
                     </div>
                   </div>
@@ -534,16 +376,24 @@
                     <div class="shadow-none border-0">
                       <div class="emails-list-header p-3 py-lg-3 py-2">
                         <!-- Email List: Search -->
-                        <div class="d-flex justify-content-between align-items-center">
+                        <div
+                          class="d-flex justify-content-between align-items-center"
+                        >
                           <div class="d-flex align-items-center w-100">
                             <i
                               class="ti ti-menu-2 ti-sm cursor-pointer d-block d-lg-none me-3"
                               data-bs-toggle="sidebar"
                               data-target="#app-email-sidebar"
-                              data-overlay></i>
+                              data-overlay
+                            ></i>
                             <div class="mb-0 mb-lg-2 w-100">
-                              <div class="input-group input-group-merge shadow-none">
-                                <span class="input-group-text border-0 ps-0" id="email-search">
+                              <div
+                                class="input-group input-group-merge shadow-none"
+                              >
+                                <span
+                                  class="input-group-text border-0 ps-0"
+                                  id="email-search"
+                                >
                                   <i class="ti ti-search"></i>
                                 </span>
                                 <input
@@ -551,13 +401,15 @@
                                   class="form-control email-search-input border-0"
                                   placeholder="Search mail"
                                   aria-label="Search mail"
-                                  aria-describedby="email-search" />
+                                  aria-describedby="email-search"
+                                />
                               </div>
                             </div>
                           </div>
                           <div class="d-flex align-items-center mb-0 mb-md-2">
                             <i
-                              class="ti ti-rotate-clockwise ti-sm rotate-180 scaleX-n1-rtl cursor-pointer email-refresh me-2"></i>
+                              class="ti ti-rotate-clockwise ti-sm rotate-180 scaleX-n1-rtl cursor-pointer email-refresh me-2"
+                            ></i>
                             <div class="dropdown d-flex align-self-center">
                               <button
                                 class="btn p-0"
@@ -565,15 +417,14 @@
                                 id="emailsActions"
                                 data-bs-toggle="dropdown"
                                 aria-haspopup="true"
-                                aria-expanded="false">
+                                aria-expanded="false"
+                              >
                                 <i class="ti ti-dots-vertical ti-sm"></i>
                               </button>
-                        
                             </div>
                           </div>
                         </div>
                         <hr class="mx-n3 emails-list-header-hr" />
-                      
                       </div>
                       <hr class="container-m-nx m-0" />
                       <!-- Email List: Items -->
@@ -583,30 +434,58 @@
                             class="email-list-item email-marked-read"
                             data-sent="true"
                             data-bs-toggle="sidebar"
-                            data-target="#app-email-view">
+                            data-target="#app-email-view"
+                          >
                             <div class="d-flex align-items-center">
                               <div class="form-check mb-0">
-                                <input class="email-list-item-input form-check-input" type="checkbox" id="email-2" />
-                                <label class="form-check-label" for="email-2"></label>
+                                <input
+                                  class="email-list-item-input form-check-input"
+                                  type="checkbox"
+                                  id="email-2"
+                                />
+                                <label
+                                  class="form-check-label"
+                                  for="email-2"
+                                ></label>
                               </div>
                               <i
-                                class="email-list-item-bookmark ti ti-star ti-sm d-sm-inline-block d-none cursor-pointer ms-2 me-3"></i>
-                              
-                              <div class="email-list-item-content ms-2 ms-sm-0 me-2">
-                                <span class="h6 email-list-item-username me-2">Administration</span>
-                                <span class="email-list-item-subject d-xl-inline-block d-block">
+                                class="email-list-item-bookmark ti ti-star ti-sm d-sm-inline-block d-none cursor-pointer ms-2 me-3"
+                              ></i>
+
+                              <div
+                                class="email-list-item-content ms-2 ms-sm-0 me-2"
+                              >
+                                <span class="h6 email-list-item-username me-2"
+                                  >Administration</span
+                                >
+                                <span
+                                  class="email-list-item-subject d-xl-inline-block d-block"
+                                >
                                   absences</span
                                 >
                               </div>
-                              <div class="email-list-item-meta ms-auto d-flex align-items-center">
+                              <div
+                                class="email-list-item-meta ms-auto d-flex align-items-center"
+                              >
                                 <span
                                   class="email-list-item-label badge badge-dot bg-info d-none d-md-inline-block me-2"
-                                  data-label="important"></span>
-                                <small class="email-list-item-time text-muted">10:12 AM</small>
-                                <ul class="list-inline email-list-item-actions text-nowrap">
-                                  <li class="list-inline-item email-unread"><i class="ti ti-mail ti-sm"></i></li>
-                                  <li class="list-inline-item email-delete"><i class="ti ti-trash ti-sm"></i></li>
-                                  <li class="list-inline-item"><i class="ti ti-archive ti-sm"></i></li>
+                                  data-label="important"
+                                ></span>
+                                <small class="email-list-item-time text-muted"
+                                  >10:12 AM</small
+                                >
+                                <ul
+                                  class="list-inline email-list-item-actions text-nowrap"
+                                >
+                                  <li class="list-inline-item email-unread">
+                                    <i class="ti ti-mail ti-sm"></i>
+                                  </li>
+                                  <li class="list-inline-item email-delete">
+                                    <i class="ti ti-trash ti-sm"></i>
+                                  </li>
+                                  <li class="list-inline-item">
+                                    <i class="ti ti-archive ti-sm"></i>
+                                  </li>
                                 </ul>
                               </div>
                             </div>
@@ -615,130 +494,247 @@
                             class="email-list-item email-marked-read"
                             data-sent="true"
                             data-bs-toggle="sidebar"
-                            data-target="#app-email-view">
+                            data-target="#app-email-view"
+                          >
                             <div class="d-flex align-items-center">
                               <div class="form-check mb-0">
-                                <input class="email-list-item-input form-check-input" type="checkbox" id="email-2" />
-                                <label class="form-check-label" for="email-2"></label>
+                                <input
+                                  class="email-list-item-input form-check-input"
+                                  type="checkbox"
+                                  id="email-2"
+                                />
+                                <label
+                                  class="form-check-label"
+                                  for="email-2"
+                                ></label>
                               </div>
                               <i
-                                class="email-list-item-bookmark ti ti-star ti-sm d-sm-inline-block d-none cursor-pointer ms-2 me-3"></i>
-                              
-                              <div class="email-list-item-content ms-2 ms-sm-0 me-2">
-                                <span class="h6 email-list-item-username me-2">Administration</span>
-                                <span class="email-list-item-subject d-xl-inline-block d-block">
+                                class="email-list-item-bookmark ti ti-star ti-sm d-sm-inline-block d-none cursor-pointer ms-2 me-3"
+                              ></i>
+
+                              <div
+                                class="email-list-item-content ms-2 ms-sm-0 me-2"
+                              >
+                                <span class="h6 email-list-item-username me-2"
+                                  >Administration</span
+                                >
+                                <span
+                                  class="email-list-item-subject d-xl-inline-block d-block"
+                                >
                                   absences</span
                                 >
                               </div>
-                              <div class="email-list-item-meta ms-auto d-flex align-items-center">
+                              <div
+                                class="email-list-item-meta ms-auto d-flex align-items-center"
+                              >
                                 <span
                                   class="email-list-item-label badge badge-dot bg-info d-none d-md-inline-block me-2"
-                                  data-label="important"></span>
-                                <small class="email-list-item-time text-muted">10:12 AM</small>
-                                <ul class="list-inline email-list-item-actions text-nowrap">
-                                  <li class="list-inline-item email-unread"><i class="ti ti-mail ti-sm"></i></li>
-                                  <li class="list-inline-item email-delete"><i class="ti ti-trash ti-sm"></i></li>
-                                  <li class="list-inline-item"><i class="ti ti-archive ti-sm"></i></li>
+                                  data-label="important"
+                                ></span>
+                                <small class="email-list-item-time text-muted"
+                                  >10:12 AM</small
+                                >
+                                <ul
+                                  class="list-inline email-list-item-actions text-nowrap"
+                                >
+                                  <li class="list-inline-item email-unread">
+                                    <i class="ti ti-mail ti-sm"></i>
+                                  </li>
+                                  <li class="list-inline-item email-delete">
+                                    <i class="ti ti-trash ti-sm"></i>
+                                  </li>
+                                  <li class="list-inline-item">
+                                    <i class="ti ti-archive ti-sm"></i>
+                                  </li>
                                 </ul>
                               </div>
                             </div>
-                          </li>  <li
-                          class="email-list-item email-marked-read"
-                          data-sent="true"
-                          data-bs-toggle="sidebar"
-                          data-target="#app-email-view">
-                          <div class="d-flex align-items-center">
-                            <div class="form-check mb-0">
-                              <input class="email-list-item-input form-check-input" type="checkbox" id="email-2" />
-                              <label class="form-check-label" for="email-2"></label>
-                            </div>
-                            <i
-                              class="email-list-item-bookmark ti ti-star ti-sm d-sm-inline-block d-none cursor-pointer ms-2 me-3"></i>
-                            
-                            <div class="email-list-item-content ms-2 ms-sm-0 me-2">
-                              <span class="h6 email-list-item-username me-2">Administration</span>
-                              <span class="email-list-item-subject d-xl-inline-block d-block">
-                                absences</span
-                              >
-                            </div>
-                            <div class="email-list-item-meta ms-auto d-flex align-items-center">
-                              <span
-                                class="email-list-item-label badge badge-dot bg-info d-none d-md-inline-block me-2"
-                                data-label="important"></span>
-                              <small class="email-list-item-time text-muted">10:12 AM</small>
-                              <ul class="list-inline email-list-item-actions text-nowrap">
-                                <li class="list-inline-item email-unread"><i class="ti ti-mail ti-sm"></i></li>
-                                <li class="list-inline-item email-delete"><i class="ti ti-trash ti-sm"></i></li>
-                                <li class="list-inline-item"><i class="ti ti-archive ti-sm"></i></li>
-                              </ul>
-                            </div>
-                          </div>
-                        </li>  <li
-                        class="email-list-item email-marked-read"
-                        data-sent="true"
-                        data-bs-toggle="sidebar"
-                        data-target="#app-email-view">
-                        <div class="d-flex align-items-center">
-                          <div class="form-check mb-0">
-                            <input class="email-list-item-input form-check-input" type="checkbox" id="email-2" />
-                            <label class="form-check-label" for="email-2"></label>
-                          </div>
-                          <i
-                            class="email-list-item-bookmark ti ti-star ti-sm d-sm-inline-block d-none cursor-pointer ms-2 me-3"></i>
-                          
-                          <div class="email-list-item-content ms-2 ms-sm-0 me-2">
-                            <span class="h6 email-list-item-username me-2">Administration</span>
-                            <span class="email-list-item-subject d-xl-inline-block d-block">
-                              absences</span
-                            >
-                          </div>
-                          <div class="email-list-item-meta ms-auto d-flex align-items-center">
-                            <span
-                              class="email-list-item-label badge badge-dot bg-info d-none d-md-inline-block me-2"
-                              data-label="important"></span>
-                            <small class="email-list-item-time text-muted">10:12 AM</small>
-                            <ul class="list-inline email-list-item-actions text-nowrap">
-                              <li class="list-inline-item email-unread"><i class="ti ti-mail ti-sm"></i></li>
-                              <li class="list-inline-item email-delete"><i class="ti ti-trash ti-sm"></i></li>
-                              <li class="list-inline-item"><i class="ti ti-archive ti-sm"></i></li>
-                            </ul>
-                          </div>
-                        </div>
-                      </li>  <li
-                      class="email-list-item email-marked-read"
-                      data-sent="true"
-                      data-bs-toggle="sidebar"
-                      data-target="#app-email-view">
-                      <div class="d-flex align-items-center">
-                        <div class="form-check mb-0">
-                          <input class="email-list-item-input form-check-input" type="checkbox" id="email-2" />
-                          <label class="form-check-label" for="email-2"></label>
-                        </div>
-                        <i
-                          class="email-list-item-bookmark ti ti-star ti-sm d-sm-inline-block d-none cursor-pointer ms-2 me-3"></i>
-                        
-                        <div class="email-list-item-content ms-2 ms-sm-0 me-2">
-                          <span class="h6 email-list-item-username me-2">Administration</span>
-                          <span class="email-list-item-subject d-xl-inline-block d-block">
-                            absences</span
+                          </li>
+                          <li
+                            class="email-list-item email-marked-read"
+                            data-sent="true"
+                            data-bs-toggle="sidebar"
+                            data-target="#app-email-view"
                           >
-                        </div>
-                        <div class="email-list-item-meta ms-auto d-flex align-items-center">
-                          <span
-                            class="email-list-item-label badge badge-dot bg-info d-none d-md-inline-block me-2"
-                            data-label="important"></span>
-                          <small class="email-list-item-time text-muted">10:12 AM</small>
-                          <ul class="list-inline email-list-item-actions text-nowrap">
-                            <li class="list-inline-item email-unread"><i class="ti ti-mail ti-sm"></i></li>
-                            <li class="list-inline-item email-delete"><i class="ti ti-trash ti-sm"></i></li>
-                            <li class="list-inline-item"><i class="ti ti-archive ti-sm"></i></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </li>
+                            <div class="d-flex align-items-center">
+                              <div class="form-check mb-0">
+                                <input
+                                  class="email-list-item-input form-check-input"
+                                  type="checkbox"
+                                  id="email-2"
+                                />
+                                <label
+                                  class="form-check-label"
+                                  for="email-2"
+                                ></label>
+                              </div>
+                              <i
+                                class="email-list-item-bookmark ti ti-star ti-sm d-sm-inline-block d-none cursor-pointer ms-2 me-3"
+                              ></i>
+
+                              <div
+                                class="email-list-item-content ms-2 ms-sm-0 me-2"
+                              >
+                                <span class="h6 email-list-item-username me-2"
+                                  >Administration</span
+                                >
+                                <span
+                                  class="email-list-item-subject d-xl-inline-block d-block"
+                                >
+                                  absences</span
+                                >
+                              </div>
+                              <div
+                                class="email-list-item-meta ms-auto d-flex align-items-center"
+                              >
+                                <span
+                                  class="email-list-item-label badge badge-dot bg-info d-none d-md-inline-block me-2"
+                                  data-label="important"
+                                ></span>
+                                <small class="email-list-item-time text-muted"
+                                  >10:12 AM</small
+                                >
+                                <ul
+                                  class="list-inline email-list-item-actions text-nowrap"
+                                >
+                                  <li class="list-inline-item email-unread">
+                                    <i class="ti ti-mail ti-sm"></i>
+                                  </li>
+                                  <li class="list-inline-item email-delete">
+                                    <i class="ti ti-trash ti-sm"></i>
+                                  </li>
+                                  <li class="list-inline-item">
+                                    <i class="ti ti-archive ti-sm"></i>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </li>
+                          <li
+                            class="email-list-item email-marked-read"
+                            data-sent="true"
+                            data-bs-toggle="sidebar"
+                            data-target="#app-email-view"
+                          >
+                            <div class="d-flex align-items-center">
+                              <div class="form-check mb-0">
+                                <input
+                                  class="email-list-item-input form-check-input"
+                                  type="checkbox"
+                                  id="email-2"
+                                />
+                                <label
+                                  class="form-check-label"
+                                  for="email-2"
+                                ></label>
+                              </div>
+                              <i
+                                class="email-list-item-bookmark ti ti-star ti-sm d-sm-inline-block d-none cursor-pointer ms-2 me-3"
+                              ></i>
+
+                              <div
+                                class="email-list-item-content ms-2 ms-sm-0 me-2"
+                              >
+                                <span class="h6 email-list-item-username me-2"
+                                  >Administration</span
+                                >
+                                <span
+                                  class="email-list-item-subject d-xl-inline-block d-block"
+                                >
+                                  absences</span
+                                >
+                              </div>
+                              <div
+                                class="email-list-item-meta ms-auto d-flex align-items-center"
+                              >
+                                <span
+                                  class="email-list-item-label badge badge-dot bg-info d-none d-md-inline-block me-2"
+                                  data-label="important"
+                                ></span>
+                                <small class="email-list-item-time text-muted"
+                                  >10:12 AM</small
+                                >
+                                <ul
+                                  class="list-inline email-list-item-actions text-nowrap"
+                                >
+                                  <li class="list-inline-item email-unread">
+                                    <i class="ti ti-mail ti-sm"></i>
+                                  </li>
+                                  <li class="list-inline-item email-delete">
+                                    <i class="ti ti-trash ti-sm"></i>
+                                  </li>
+                                  <li class="list-inline-item">
+                                    <i class="ti ti-archive ti-sm"></i>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </li>
+                          <li
+                            class="email-list-item email-marked-read"
+                            data-sent="true"
+                            data-bs-toggle="sidebar"
+                            data-target="#app-email-view"
+                          >
+                            <div class="d-flex align-items-center">
+                              <div class="form-check mb-0">
+                                <input
+                                  class="email-list-item-input form-check-input"
+                                  type="checkbox"
+                                  id="email-2"
+                                />
+                                <label
+                                  class="form-check-label"
+                                  for="email-2"
+                                ></label>
+                              </div>
+                              <i
+                                class="email-list-item-bookmark ti ti-star ti-sm d-sm-inline-block d-none cursor-pointer ms-2 me-3"
+                              ></i>
+
+                              <div
+                                class="email-list-item-content ms-2 ms-sm-0 me-2"
+                              >
+                                <span class="h6 email-list-item-username me-2"
+                                  >Administration</span
+                                >
+                                <span
+                                  class="email-list-item-subject d-xl-inline-block d-block"
+                                >
+                                  absences</span
+                                >
+                              </div>
+                              <div
+                                class="email-list-item-meta ms-auto d-flex align-items-center"
+                              >
+                                <span
+                                  class="email-list-item-label badge badge-dot bg-info d-none d-md-inline-block me-2"
+                                  data-label="important"
+                                ></span>
+                                <small class="email-list-item-time text-muted"
+                                  >10:12 AM</small
+                                >
+                                <ul
+                                  class="list-inline email-list-item-actions text-nowrap"
+                                >
+                                  <li class="list-inline-item email-unread">
+                                    <i class="ti ti-mail ti-sm"></i>
+                                  </li>
+                                  <li class="list-inline-item email-delete">
+                                    <i class="ti ti-trash ti-sm"></i>
+                                  </li>
+                                  <li class="list-inline-item">
+                                    <i class="ti ti-archive ti-sm"></i>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </li>
                         </ul>
                         <ul class="list-unstyled m-0">
-                          <li class="email-list-empty text-center d-none">No items found.</li>
+                          <li class="email-list-empty text-center d-none">
+                            No items found.
+                          </li>
                         </ul>
                       </div>
                     </div>
@@ -747,20 +743,32 @@
                   <!-- /Emails List -->
 
                   <!-- Email View -->
-                  <div class="col app-email-view flex-grow-0 bg-body" id="app-email-view">
-                    <div class="card shadow-none border-0 rounded-0 app-email-view-header p-3 py-md-3 py-2">
+                  <div
+                    class="col app-email-view flex-grow-0 bg-body"
+                    id="app-email-view"
+                  >
+                    <div
+                      class="card shadow-none border-0 rounded-0 app-email-view-header p-3 py-md-3 py-2"
+                    >
                       <!-- Email View : Title  bar-->
-                      <div class="d-flex justify-content-between align-items-center py-2">
+                      <div
+                        class="d-flex justify-content-between align-items-center py-2"
+                      >
                         <div class="d-flex align-items-center overflow-hidden">
                           <i
                             class="ti ti-chevron-left ti-sm cursor-pointer me-2"
                             data-bs-toggle="sidebar"
-                            data-target="#app-email-view"></i>
-                          <h6 class="text-truncate mb-0 me-2">notification d'absences</h6>
+                            data-target="#app-email-view"
+                          ></i>
+                          <h6 class="text-truncate mb-0 me-2">
+                            notification d'absences
+                          </h6>
                         </div>
                         <!-- Email View : Action  bar-->
                         <div class="d-flex align-items-center">
-                          <i class="ti ti-printer ti-sm mt-1 cursor-pointer d-sm-block d-none"></i>
+                          <i
+                            class="ti ti-printer ti-sm mt-1 cursor-pointer d-sm-block d-none"
+                          ></i>
                           <div class="dropdown ms-3">
                             <button
                               class="btn p-0"
@@ -768,11 +776,18 @@
                               id="dropdownMoreOptions"
                               data-bs-toggle="dropdown"
                               aria-haspopup="true"
-                              aria-expanded="false">
+                              aria-expanded="false"
+                            >
                               <i class="ti ti-dots-vertical ti-sm"></i>
                             </button>
-                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMoreOptions">
-                              <a class="dropdown-item" href="javascript:void(0)">
+                            <div
+                              class="dropdown-menu dropdown-menu-end"
+                              aria-labelledby="dropdownMoreOptions"
+                            >
+                              <a
+                                class="dropdown-item"
+                                href="javascript:void(0)"
+                              >
                                 <i class="ti ti-mail ti-xs me-1"></i>
                                 <span class="align-middle">Mark as unread</span>
                               </a>
@@ -781,13 +796,18 @@
                         </div>
                       </div>
                       <hr class="app-email-view-hr mx-n3 mb-2" />
-                      <div class="d-flex justify-content-between align-items-center">
+                      <div
+                        class="d-flex justify-content-between align-items-center"
+                      >
                         <div class="d-flex align-items-center">
                           <i
                             class="ti ti-trash ti-sm cursor-pointer me-3"
                             data-bs-toggle="sidebar"
-                            data-target="#app-email-view"></i>
-                          <i class="ti ti-mail-opened ti-sm cursor-pointer me-3"></i>
+                            data-target="#app-email-view"
+                          ></i>
+                          <i
+                            class="ti ti-mail-opened ti-sm cursor-pointer me-3"
+                          ></i>
                           <div class="dropdown me-3">
                             <button
                               class="btn p-0"
@@ -795,10 +815,10 @@
                               id="dropdownMenuFolderTwo"
                               data-bs-toggle="dropdown"
                               aria-haspopup="true"
-                              aria-expanded="false">
+                              aria-expanded="false"
+                            >
                               <i class="ti ti-folder ti-sm"></i>
                             </button>
-
                           </div>
                           <div class="dropdown me-3">
                             <button
@@ -807,224 +827,330 @@
                               id="dropdownLabelTwo"
                               data-bs-toggle="dropdown"
                               aria-haspopup="true"
-                              aria-expanded="false">
+                              aria-expanded="false"
+                            >
                               <i class="ti ti-tag ti-sm"></i>
                             </button>
-                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownLabelTwo">
-                              <a class="dropdown-item" href="javascript:void(0)">
+                            <div
+                              class="dropdown-menu dropdown-menu-end"
+                              aria-labelledby="dropdownLabelTwo"
+                            >
+                              <a
+                                class="dropdown-item"
+                                href="javascript:void(0)"
+                              >
                                 <i class="badge badge-dot bg-success me-1"></i>
                                 <span class="align-middle">Workshop</span>
                               </a>
-                              <a class="dropdown-item" href="javascript:void(0)">
+                              <a
+                                class="dropdown-item"
+                                href="javascript:void(0)"
+                              >
                                 <i class="badge badge-dot bg-primary me-1"></i>
                                 <span class="align-middle">Company</span>
                               </a>
-                              <a class="dropdown-item" href="javascript:void(0)">
+                              <a
+                                class="dropdown-item"
+                                href="javascript:void(0)"
+                              >
                                 <i class="badge badge-dot bg-info me-1"></i>
                                 <span class="align-middle">Important</span>
                               </a>
                             </div>
                           </div>
                         </div>
-                        <div class="d-flex align-items-center flex-wrap justify-content-end">
-                          <span class="d-sm-block d-none mx-3 text-muted">1-10 of 653</span>
-                         
+                        <div
+                          class="d-flex align-items-center flex-wrap justify-content-end"
+                        >
+                          <span class="d-sm-block d-none mx-3 text-muted"
+                            >1-10 of 653</span
+                          >
                         </div>
                       </div>
                     </div>
                     <hr class="m-0" />
-                 
-                      <!-- Email View : Last mail-->
-                      <div class="card email-card-last mx-sm-4 mx-3 mt-4">
-                        <div class="card-header d-flex justify-content-between align-items-center flex-wrap">
-                          <div class="d-flex align-items-center mb-sm-0 mb-3">
-                            <div class="flex-grow-1 ms-1">
-                              <h6 class="m-0">Rahma chriha</h6>
-                              <small class="text-muted">rahma@email.com</small>
-                            </div>
-                          </div>
-                          <div class="d-flex align-items-center">
-                            <p class="mb-0 me-3 text-muted">June 20th 2020, 08:10 AM</p>
-                            <div class="dropdown me-3 d-flex align-self-center">
-                              <button
-                                class="btn p-0"
-                                type="button"
-                                id="dropdownEmailTwo"
-                                data-bs-toggle="dropdown"
-                                aria-haspopup="true"
-                                aria-expanded="false">
-                                <i class="ti ti-dots-vertical"></i>
-                              </button>
-                            </div>
+
+                    <!-- Email View : Last mail-->
+                    <div class="card email-card-last mx-sm-4 mx-3 mt-4">
+                      <div
+                        class="card-header d-flex justify-content-between align-items-center flex-wrap"
+                      >
+                        <div class="d-flex align-items-center mb-sm-0 mb-3">
+                          <div class="flex-grow-1 ms-1">
+                            <h6 class="m-0">Rahma chriha</h6>
+                            <small class="text-muted">rahma@email.com</small>
                           </div>
                         </div>
-                        <div class="card-body">
-                          <p class="fw-medium">notification!</p>
-                          <p>
-                            votre fils est absent
+                        <div class="d-flex align-items-center">
+                          <p class="mb-0 me-3 text-muted">
+                            June 20th 2020, 08:10 AM
                           </p>
-                          <p>
-                            pour la raison de 
-                          </p>
+                          <div class="dropdown me-3 d-flex align-self-center">
+                            <button
+                              class="btn p-0"
+                              type="button"
+                              id="dropdownEmailTwo"
+                              data-bs-toggle="dropdown"
+                              aria-haspopup="true"
+                              aria-expanded="false"
+                            >
+                              <i class="ti ti-dots-vertical"></i>
+                            </button>
+                          </div>
                         </div>
+                      </div>
+                      <div class="card-body">
+                        <p class="fw-medium">notification!</p>
+                        <p>votre fils est absent</p>
+                        <p>pour la raison de</p>
                       </div>
                     </div>
                   </div>
-                  <!-- Email View -->
                 </div>
+                <!-- Email View -->
+              </div>
 
-                <!-- Compose Email -->
-                <div
-                  class="app-email-compose modal"
-                  id="emailComposeSidebar"
-                  tabindex="-1"
-                  aria-labelledby="emailComposeSidebarLabel"
-                  aria-hidden="true">
-                  <div class="modal-dialog m-0 me-md-4 mb-4 modal-lg">
-                    <div class="modal-content p-0">
-                      <div class="modal-header py-3 bg-body">
-                        <h5 class="modal-title fs-5">Compose Mail</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                      </div>
-                      <div class="modal-body flex-grow-1 pb-sm-0 p-4 py-2">
-                        <form class="email-compose-form">
-                          <div class="email-compose-to d-flex justify-content-between align-items-center">
-                            <label class="form-label mb-0" for="emailContacts">To:</label>
-                            <div class="select2-primary border-0 shadow-none flex-grow-1 mx-2">
-                              <select
-                                class="select2 select-email-contacts form-select"
-                                id="emailContacts"
-                                name="emailContacts"
-                                multiple>
-                                <option data-avatar="1.png" value="Jane Foster">rahma</option>
-                                <option data-avatar="3.png" value="Donna Frank">louay</option>
-                                <option data-avatar="5.png" value="Gabrielle Robertson">zak</option>
-                                <option data-avatar="7.png" value="Lori Spears">ghassen</option>
+              
+              <div class="modal fade app-email-compose" id="emailComposeSidebar" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header py-3 bg-body">
+                      <h5 class="modal-title fs-5">Compose Mail</h5>
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div class="modal-body flex-grow-1 pb-sm-0 p-4 py-2">
+                      <form class="email-compose-form">
+                        <div
+                          class="email-compose-to d-flex justify-content-between align-items-center"
+                        >
+                          <label class="form-label mb-0" for="emailContacts"
+                            >To:</label
+                          >
+                          <div
+                            class="select2-primary border-0 shadow-none flex-grow-1 mx-2"
+                          >
+                          <select
+                          class="select2 select-email-contacts form-select"
+                          id="emailContacts"
+                          name="emailContacts"
+                          multiple>
+                          <option data-avatar="1.png" value="Rahma">Rahma</option>
+                                <option data-avatar="3.png" value="Si Louay">Si Louay</option>
+                                <option data-avatar="5.png" value="Zack">Zack</option>
+                                <option data-avatar="7.png" value="Si Ghassen">Si Ghassen</option>
                                 <option data-avatar="9.png" value="Sandy Vega">Sandy Vega</option>
                                 <option data-avatar="11.png" value="Cheryl May">Cheryl May</option>
-                              </select>
-                            </div>
-                            <div class="email-compose-toggle-wrapper">
-                              <a class="email-compose-toggle-cc" href="javascript:void(0);">Cc |</a>
-                              <a class="email-compose-toggle-bcc" href="javascript:void(0);">Bcc</a>
-                            </div>
+                        </select>
                           </div>
+                          <div class="email-compose-toggle-wrapper">
+                            <a
+                              class="email-compose-toggle-cc"
+                              href="javascript:void(0);"
+                              >Cc |</a
+                            >
+                            <a
+                              class="email-compose-toggle-bcc"
+                              href="javascript:void(0);"
+                              >Bcc</a
+                            >
+                          </div>
+                        </div>
 
-                          <div class="email-compose-cc d-none">
-                            <hr class="container-m-nx my-2" />
-                            <div class="d-flex align-items-center">
-                              <label for="email-cc" class="form-label mb-0">Cc: </label>
-                              <input
-                                type="text"
-                                class="form-control border-0 shadow-none flex-grow-1 mx-2"
-                                id="email-cc"
-                                placeholder="someone@email.com" />
-                            </div>
-                          </div>
-                          <div class="email-compose-bcc d-none">
-                            <hr class="container-m-nx my-2" />
-                            <div class="d-flex align-items-center">
-                              <label for="email-bcc" class="form-label mb-0">Bcc: </label>
-                              <input
-                                type="text"
-                                class="form-control border-0 shadow-none flex-grow-1 mx-2"
-                                id="email-bcc"
-                                placeholder="someone@email.com" />
-                            </div>
-                          </div>
+                        <div class="email-compose-cc d-none">
                           <hr class="container-m-nx my-2" />
-                          <div class="email-compose-subject d-flex align-items-center mb-2">
-                            <label for="email-subject" class="form-label mb-0">Subject:</label>
+                          <div class="d-flex align-items-center">
+                            <label for="email-cc" class="form-label mb-0"
+                              >Cc:
+                            </label>
                             <input
                               type="text"
                               class="form-control border-0 shadow-none flex-grow-1 mx-2"
-                              id="email-subject"
-                              placeholder="Project Details" />
+                              id="email-cc"
+                              placeholder="someone@email.com"
+                            />
                           </div>
-                          <div class="email-compose-message container-m-nx">
-                            <div class="d-flex justify-content-end">
-                              <div class="email-editor-toolbar border-0 w-100 border-top">
-                                <span class="ql-formats me-0">
-                                  <button class="ql-bold"></button>
-                                  <button class="ql-italic"></button>
-                                  <button class="ql-underline"></button>
-                                  <button class="ql-list" value="ordered"></button>
-                                  <button class="ql-list" value="bullet"></button>
-                                  <button class="ql-link"></button>
-                                  <button class="ql-image"></button>
-                                </span>
-                              </div>
-                            </div>
-                            <div class="email-editor border-0 border-top"></div>
+                        </div>
+                        <div class="email-compose-bcc d-none">
+                          <hr class="container-m-nx my-2" />
+                          <div class="d-flex align-items-center">
+                            <label for="email-bcc" class="form-label mb-0"
+                              >Bcc:
+                            </label>
+                            <input
+                              type="text"
+                              class="form-control border-0 shadow-none flex-grow-1 mx-2"
+                              id="email-bcc"
+                              placeholder="someone@email.com"
+                            />
                           </div>
-                          <hr class="container-m-nx mt-0 mb-2" />
-                          <div
-                            class="email-compose-actions d-flex justify-content-between align-items-center mt-3 mb-3">
-                            <div class="d-flex align-items-center">
-                              <div class="btn-group">
-                                <button type="reset" class="btn btn-primary" data-bs-dismiss="modal" aria-label="Close">
-                                  <i class="ti ti-send ti-xs me-1"></i>Send
-                                </button>
+                        </div>
+                        <hr class="container-m-nx my-2" />
+                        <div
+                          class="email-compose-subject d-flex align-items-center mb-2"
+                        >
+                          <label for="email-subject" class="form-label mb-0"
+                            >Subject:</label
+                          >
+                          <input
+                            type="text"
+                            class="form-control border-0 shadow-none flex-grow-1 mx-2"
+                            id="email-subject"
+                            placeholder="Project Details"
+                          />
+                        </div>
+                        <div class="email-compose-message container-m-nx">
+                          <div class="d-flex justify-content-end">
+                            <div
+                              class="email-editor-toolbar border-0 w-100 border-top"
+                            >
+                              <span class="ql-formats me-0">
+                                <button class="ql-bold"></button>
+                                <button class="ql-italic"></button>
+                                <button class="ql-underline"></button>
                                 <button
-                                  type="button"
-                                  class="btn btn-primary dropdown-toggle dropdown-toggle-split"
-                                  data-bs-toggle="dropdown"
-                                  aria-haspopup="true"
-                                  aria-expanded="false">
-                                  <span class="visually-hidden">Send Options</span>
-                                </button>
-                                <ul class="dropdown-menu">
-                                  <li><a class="dropdown-item" href="javascript:void(0);">Schedule send</a></li>
-                                  <li><a class="dropdown-item" href="javascript:void(0);">Save draft</a></li>
-                                </ul>
-                              </div>
-                              <label for="attach-file"><i class="ti ti-paperclip cursor-pointer ms-2"></i></label>
-                              <input type="file" name="file-input" class="d-none" id="attach-file" />
+                                  class="ql-list"
+                                  value="ordered"
+                                ></button>
+                                <button class="ql-list" value="bullet"></button>
+                                <button class="ql-link"></button>
+                                <button class="ql-image"></button>
+                              </span>
                             </div>
-                            <div class="d-flex align-items-center">
-                              <div class="dropdown">
-                                <button
-                                  class="btn p-0"
-                                  type="button"
-                                  id="dropdownMoreActions"
-                                  data-bs-toggle="dropdown"
-                                  aria-haspopup="true"
-                                  aria-expanded="false">
-                                  <i class="ti ti-dots-vertical"></i>
-                                </button>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMoreActions">
-                                  <li><button type="button" class="dropdown-item">Add Label</button></li>
-                                  <li><button type="button" class="dropdown-item">Plain text mode</button></li>
-                                  <li>
-                                    <hr class="dropdown-divider" />
-                                  </li>
-                                  <li><button type="button" class="dropdown-item">Print</button></li>
-                                  <li><button type="button" class="dropdown-item">Check Spelling</button></li>
-                                </ul>
-                              </div>
-                              <button type="reset" class="btn" data-bs-dismiss="modal" aria-label="Close">
-                                <i class="ti ti-trash"></i>
+                          </div>
+                          <div class="email-editor border-0 border-top"></div>
+                        </div>
+                        <hr class="container-m-nx mt-0 mb-2" />
+                        <div
+                          class="email-compose-actions d-flex justify-content-between align-items-center mt-3 mb-3"
+                        >
+                          <div class="d-flex align-items-center">
+                            <div class="btn-group">
+                              <button
+                                type="reset"
+                                class="btn btn-primary"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                              >
+                                <i class="ti ti-send ti-xs me-1"></i>Send
                               </button>
+                              <button
+                                type="button"
+                                class="btn btn-primary dropdown-toggle dropdown-toggle-split"
+                                data-bs-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false"
+                              >
+                                <span class="visually-hidden"
+                                  >Send Options</span
+                                >
+                              </button>
+                              <ul class="dropdown-menu">
+                                <li>
+                                  <a
+                                    class="dropdown-item"
+                                    href="javascript:void(0);"
+                                    >Schedule send</a
+                                  >
+                                </li>
+                                <li>
+                                  <a
+                                    class="dropdown-item"
+                                    href="javascript:void(0);"
+                                    >Save draft</a
+                                  >
+                                </li>
+                              </ul>
                             </div>
+                            <label for="attach-file"
+                              ><i
+                                class="ti ti-paperclip cursor-pointer ms-2"
+                              ></i
+                            ></label>
+                            <input
+                              type="file"
+                              name="file-input"
+                              class="d-none"
+                              id="attach-file"
+                            />
                           </div>
-                        </form>
-                      </div>
+                          <div class="d-flex align-items-center">
+                            <div class="dropdown">
+                              <button
+                                class="btn p-0"
+                                type="button"
+                                id="dropdownMoreActions"
+                                data-bs-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false"
+                              >
+                                <i class="ti ti-dots-vertical"></i>
+                              </button>
+                              <ul
+                                class="dropdown-menu"
+                                aria-labelledby="dropdownMoreActions"
+                              >
+                                <li>
+                                  <button type="button" class="dropdown-item">
+                                    Add Label
+                                  </button>
+                                </li>
+                                <li>
+                                  <button type="button" class="dropdown-item">
+                                    Plain text mode
+                                  </button>
+                                </li>
+                                <li>
+                                  <hr class="dropdown-divider" />
+                                </li>
+                                <li>
+                                  <button type="button" class="dropdown-item">
+                                    Print
+                                  </button>
+                                </li>
+                                <li>
+                                  <button type="button" class="dropdown-item">
+                                    Check Spelling
+                                  </button>
+                                </li>
+                              </ul>
+                            </div>
+                            <button
+                              type="reset"
+                              class="btn"
+                              data-bs-dismiss="modal"
+                              aria-label="Close"
+                            >
+                              <i class="ti ti-trash"></i>
+                            </button>
+                          </div>
+                        </div>
+                      </form>
                     </div>
+                   
                   </div>
                 </div>
-                <!-- /Compose Email -->
               </div>
+              <!-- /Compose Email -->
             </div>
-            <!--/ Content -->
-
+            <!-- / Content -->
 
             <div class="content-backdrop fade"></div>
           </div>
-          <!--/ Content wrapper -->
+          <!-- Content wrapper -->
         </div>
-
-        <!--/ Layout container -->
+        <!-- / Layout page -->
       </div>
+
+      <!-- Overlay -->
+      <div class="layout-overlay layout-menu-toggle"></div>
+
+      <!-- Drag Target Area To SlideIn Menu On Small Screens -->
+      <div class="drag-target"></div>
     </div>
 
     <!-- Overlay -->
@@ -1044,7 +1170,7 @@
     <script src="../../assets/vendor/libs/node-waves/node-waves.js"></script>
     <script src="../../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
     <script src="../../assets/vendor/libs/hammer/hammer.js"></script>
-    <script src="../../assets/vendor/libs/i18n/i18n.js"></script>
+    <!-- <script src="../../assets/vendor/libs/i18n/i18n.js"></script> -->
     <script src="../../assets/vendor/libs/typeahead-js/typeahead.js"></script>
     <script src="../../assets/vendor/js/menu.js"></script>
 
