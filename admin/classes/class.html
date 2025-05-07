@@ -39,6 +39,7 @@
     <!-- Vendors CSS -->
     <link rel="stylesheet" href="/assets/vendor/libs/node-waves/node-waves.css" />
     <link rel="stylesheet" href="/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+    <link rel="stylesheet" href="/assets/vendor/libs/sweetalert2/sweetalert2.css" />
 
     <!-- Page CSS -->
 
@@ -293,39 +294,22 @@
                     <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-class">Ajouter</button>
                 </div>
                 <div class="row">
-                    <div class="col-md-3 mb-4">
-                        <a href="/admin/students/index.html?class=1a" class="card">
-                            <h4 class="card-header">
-                                1ér année <span class="fw-bold">A</span>
-                            </h4>
-                            <div class="card-body">
-                                
-                                <div><i class="ti ti-school"> </i> 18 élèves</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-3 mb-4">
-                        <a href="/admin/students/index.html?class=1b" class="card">
-                            <h4 class="card-header">
-                                1ér année <span class="fw-bold">B</span>
-                            </h4>
-                            <div class="card-body">
-                                
-                                <div><i class="ti ti-school"> </i> 14 élèves</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-3 mb-4">
-                        <a href="/admin/students/index.html?class=1c" class="card">
-                            <h4 class="card-header">
-                                1ér année <span class="fw-bold">C</span>
-                            </h4>
-                            <div class="card-body">
-                                
-                                <div><i class="ti ti-school"> </i> 16 élèves</div>
-                            </div>
-                        </a>
-                    </div>
+                  <div class="col-md-3 mb-4">
+                    <a href="javascript:void(0);" class="card position-relative">
+                      <h4 class="card-header">
+                        1ér année <span class="fw-bold">A</span>
+                      </h4>
+                      <div class="card-body">
+                        <div><i class="ti ti-school"></i> 18 élèves</div>
+                      </div>
+                      <!-- Actions -->
+                      <div class="card-actions  p-2 d-flex gap-2">
+                        <button class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#edit-class" data-class="1a" data-name="1ér année A">Modifier</button>
+                        <button class="btn btn-sm btn-danger delete-btn" data-class="1a">Supprimer</button>
+                      </div>
+                    </a>
+                  </div>
+                   
                 </div>
             </div>
             <!-- / Content -->
@@ -350,6 +334,27 @@
                           <button type="submit" class="btn btn-primary me-sm-3 me-1 waves-effect waves-light">Enregistrer</button>
                         </div>
                       <input type="hidden"></form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="modal fade" id="edit-class" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-simple">
+                  <div class="modal-content p-3 p-md-5">
+                    <div class="modal-body">
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      <h3 class="mb-3">Modifier Classe</h3>
+                      <form id="editClassForm" onsubmit="return false">
+                        <input type="hidden" id="edit-class-id" />
+                        <div class="mb-3">
+                          <label for="editClassName" class="form-label">Nom de la classe</label>
+                          <input type="text" class="form-control" id="editClassName" />
+                        </div>
+                        <div class="text-center">
+                          <button type="submit" class="btn btn-primary">Enregistrer</button>
+                        </div>
+                      </form>
                     </div>
                   </div>
                 </div>
@@ -384,10 +389,68 @@
     <!-- endbuild -->
 
     <!-- Vendors JS -->
+    <script src="/assets/vendor/libs/sweetalert2/sweetalert2.js"></script>
 
     <!-- Main JS -->
     <script src="/assets/js/main.js"></script>
 
     <!-- Page JS -->
+     <script>
+      var editModal = document.getElementById('edit-class');
+editModal.addEventListener('show.bs.modal', function (event) {
+  var button = event.relatedTarget; // Button that triggered modal
+  var classId = button.getAttribute('data-class');
+  var className = button.getAttribute('data-name');
+
+  // Populate modal fields
+  document.getElementById('edit-class-id').value = classId;
+  document.getElementById('editClassName').value = className;
+});
+
+// Handle form submission for editing class
+document.getElementById('editClassForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  // Add your update logic here
+  alert('Classe modifiée !');
+  var modal = bootstrap.Modal.getInstance(editModal);
+  modal.hide();
+});
+
+// Handle delete button click
+document.querySelectorAll('.delete-btn').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    var classId = this.getAttribute('data-class');
+
+    Swal.fire({
+      title: "Êtes-vous sûr ?",
+      text: "Cette action est irréversible !",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: "Oui, supprimer !",
+      cancelButtonText: "Annuler",
+      customClass: {
+        confirmButton: "btn btn-danger me-2",
+        cancelButton: "btn btn-secondary",
+      },
+      buttonsStyling: false,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // Example: remove the row from DataTable
+        let row = $(this).closest("tr");
+        dt_user.row(row).remove().draw();
+
+        Swal.fire({
+          icon: "success",
+          title: "Supprimé !",
+          text: "L'utilisateur a été supprimé.",
+          customClass: {
+            confirmButton: "btn btn-success",
+          },
+        });
+      }
+    });
+  });
+});
+     </script>
   </body>
 </html>

@@ -40,6 +40,8 @@
   <link rel="stylesheet" href="/assets/vendor/libs/datatables-buttons-bs5/buttons.bootstrap5.css" />
   <link rel="stylesheet" href="/assets/vendor/libs/select2/select2.css" />
   <link rel="stylesheet" href="/assets/vendor/libs/@form-validation/umd/styles/index.min.css" />
+  <link rel="stylesheet" href="/assets/vendor/libs/animate-css/animate.css" />
+  <link rel="stylesheet" href="/assets/vendor/libs/sweetalert2/sweetalert2.css" />
   <!-- Page CSS -->
 
   <!-- Helpers -->
@@ -290,7 +292,7 @@
           <div class="container-xxl flex-grow-1 container-p-y">
             <div class="card">
               <div class="card-header border-bottom">
-                <h5 class="card-title mb-3">Search Filter</h5>
+                <h5 class="card-title mb-3">Liste des élèves</h5>
                 <div class="d-flex justify-content-between align-items-center row pb-2 gap-3 gap-md-0">
                   <div class="col-md-4 user_role"></div>
                 </div>
@@ -334,7 +336,7 @@
 
                     <div class="mb-3">
                       <label class="form-label" for="classe">Classe</label>
-                      <select id="classe" class="select2 form-select">
+                      <select id="classe" class="form-select">
                         <option value="">Select</option>
                         <option value="primaire A">primaire A</option>
                         <option value="primaire B">primaire B</option>
@@ -344,7 +346,7 @@
                     </div>
                     <div class="mb-3">
                       <label class="form-label" for="parent">Parent</label>
-                      <select id="parent" class="select2 form-select">
+                      <select id="parent" class="form-select">
                         <option value="">Select</option>
                         <option value="arbi chriha">arbi chriha</option>
                         <option value="arbi chriha">wissem chihaoui</option>
@@ -352,8 +354,54 @@
                       </select>
                     </div>
 
-                    <button type="submit" class="btn btn-primary me-sm-3 me-1 data-submit">Submit</button>
-                    <button type="reset" class="btn btn-label-secondary" data-bs-dismiss="offcanvas">Cancel</button>
+                    <button type="submit" class="btn btn-primary me-sm-3 me-1 data-submit">Enregistrer</button>
+                    <button type="reset" class="btn btn-label-secondary" data-bs-dismiss="offcanvas">Annuler</button>
+                  </form>
+                </div>
+              </div>
+
+              <!-- Offcanvas to edit user  -->
+              <div class="offcanvas offcanvas-end" id="offcanvasEditUser" tabindex="-1" aria-labelledby="offcanvasEditUserLabel">
+                <div class="offcanvas-header">
+                  <h5 id="offcanvasEditUserLabel" class="offcanvas-title">Modifier élève</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                  <form id="editUserForm">
+                    <!-- same input fields as add form -->
+                    <div class="mb-3">
+                      <label class="form-label" for="edit-user-fullname">Nom & Prénom</label>
+                      <input type="text" class="form-control" id="edit-user-fullname" placeholder="rahma"
+                        name="userFullname" aria-label="rahma" />
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label" for="edit-user-email">Email</label>
+                      <input type="text" id="edit-user-email" class="form-control" placeholder="chriharahma@example.com"
+                        aria-label="chriharahma@example.com" name="userEmail" />
+                    </div>
+
+
+                    <div class="mb-3">
+                      <label class="form-label" for="edit-user-class">Classe</label>
+                      <select id="edit-user-class" class="form-select">
+                        <option value="">Select</option>
+                        <option value="1 primaire A">1 primaire A</option>
+                        <option value="1 primaire B">1 primaire B</option>
+                        <option value="1 primaire C">1 primaire C</option>
+
+                      </select>
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label" for="edit-user-parent">Parent</label>
+                      <select id="edit-user-parent" class="form-select">
+                        <option value="">Select</option>
+                        <option value="Arbi chriha">Arbi chriha</option>
+                        <option value="wissem chihaoui">wissem chihaoui</option>
+
+                      </select>
+                    </div>
+                    <!-- Other fields like email, class, parent, etc. -->
+                    <button type="submit" class="btn btn-primary">Mettre à jour</button>
                   </form>
                 </div>
               </div>
@@ -399,6 +447,8 @@
   <script src="/assets/vendor/libs/@form-validation/umd/plugin-auto-focus/index.min.js"></script>
   <script src="/assets/vendor/libs/cleavejs/cleave.js"></script>
   <script src="/assets/vendor/libs/cleavejs/cleave-phone.js"></script>
+  <script src="/assets/vendor/libs/sweetalert2/sweetalert2.js"></script>
+
   <!-- Main JS -->
   <script src="/assets/js/main.js"></script>
 

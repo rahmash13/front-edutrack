@@ -101,26 +101,6 @@ $(function () {
             return $row_output;
           }
         },
-        // {
-        //   // User Role
-        //   targets: 2,
-        //   render: function (data, type, full, meta) {
-        //     var $role = full['role'];
-        //     var roleBadgeObj = {
-        //       Subscriber:
-        //         '<span class="badge badge-center rounded-pill bg-label-warning w-px-30 h-px-30 me-2"><i class="ti ti-user ti-sm"></i></span>',
-        //       Author:
-        //         '<span class="badge badge-center rounded-pill bg-label-success w-px-30 h-px-30 me-2"><i class="ti ti-circle-check ti-sm"></i></span>',
-        //       Maintainer:
-        //         '<span class="badge badge-center rounded-pill bg-label-primary w-px-30 h-px-30 me-2"><i class="ti ti-chart-pie-2 ti-sm"></i></span>',
-        //       Editor:
-        //         '<span class="badge badge-center rounded-pill bg-label-info w-px-30 h-px-30 me-2"><i class="ti ti-edit ti-sm"></i></span>',
-        //       Admin:
-        //         '<span class="badge badge-center rounded-pill bg-label-secondary w-px-30 h-px-30 me-2"><i class="ti ti-device-laptop ti-sm"></i></span>'
-        //     };
-        //     return "<span class='text-truncate d-flex align-items-center'>" + roleBadgeObj[$role] + $role + '</span>';
-        //   }
-        // },
         {
           // Plans
           targets: 3,
@@ -130,21 +110,6 @@ $(function () {
             return '<a  href="index.html" class="fw-medium">' + $parent + '</a>';
           }
         },
-        // {
-        //   // User Status
-        //   targets: 5,
-        //   render: function (data, type, full, meta) {
-        //     var $status = full['status'];
-
-        //     return (
-        //       '<span class="badge ' +
-        //       statusObj[$status].class +
-        //       '" text-capitalized>' +
-        //       statusObj[$status].title +
-        //       '</span>'
-        //     );
-        //   }
-        // },
         {
           // Actions
           targets: -1,
@@ -154,7 +119,15 @@ $(function () {
           render: function (data, type, full, meta) {
             return (
               '<div class="d-flex align-items-center">' +
-              '<a href="javascript:;" class="text-body"><i class="ti ti-edit ti-sm me-2"></i></a>' +
+              `<a href="javascript:;" class="text-body btn-edit" 
+                  data-bs-toggle="offcanvas" 
+                  data-bs-target="#offcanvasEditUser"
+                  data-name="${full.name}" 
+                  data-email="${full.mail}" 
+                  data-class="${full.class}" 
+                  data-parent="${full.parent}">
+                  <i class="ti ti-edit ti-sm me-2"></i>
+                </a>` +
               '<a href="javascript:;" class="text-body delete-record"><i class="ti ti-trash ti-sm mx-2"></i></a>' +
               '</div>'
             );
@@ -464,7 +437,41 @@ $(function () {
 
   // Delete Record
   $('.datatables-users tbody').on('click', '.delete-record', function () {
-    dt_user.row($(this).parents('tr')).remove().draw();
+    const row = $(this).closest('tr'); // store the row to delete later
+  
+    Swal.fire({
+      title: 'Êtes-vous sûr ?',
+      text: "Cette action est irréversible.",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Oui, le supprimer !',
+      cancelButtonText: 'Annuler',
+      customClass: {
+        confirmButton: 'btn btn-primary me-3',
+        cancelButton: 'btn btn-label-secondary'
+      },
+      buttonsStyling: false
+    }).then((result) => {
+      if (result.isConfirmed) {
+        dt_user.row(row).remove().draw();
+  
+        Swal.fire({
+          icon: 'success',
+          title: 'Supprimé !',
+          text: 'L\'élément a été supprimé avec succès.',
+          customClass: {
+            confirmButton: 'btn btn-success'
+          }
+        });
+      }
+    });
+  });
+
+  $(document).on('click', '.btn-edit', function () {
+    $('#edit-user-fullname').val($(this).data('name'));
+    $('#edit-user-email').val($(this).data('email'));
+    $('#edit-user-class').val($(this).data('class')).trigger('change');
+    $('#edit-user-parent').val($(this).data('parent')).trigger('change');
   });
 
   // Filter form control to default size
